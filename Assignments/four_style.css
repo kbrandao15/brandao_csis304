@@ -1,0 +1,7 @@
+ol { list-style-type: upper-roman;  }
+ol ol { list-style-type: upper-alpha;  }
+ol ol ol { list-style-type: decimal;  }
+
+li.compact { background-color: pink;  }
+li.midsize { background-color: blue;  }
+li.sports { background-color: red;  }
