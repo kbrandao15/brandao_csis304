@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<!--
+  kkaiser16@georgefox.edu,
+  kbrandao15@georgefox.edu
+  Lab 2 - Favorite Color 
+  2018-02-14
+-->
+<!-- radio_click.hmtl     
+    A document for radio_click.js Creates four radio buttons that call the plane
+    Choice event handler to display descriptions -->
+
+ <html lang = "en">
+
+ <head> 
+ <title> radio_click.html </title>
+ <script src = "radio_click.js" > </script> 
+ </head>
+
+ <body>
+     <hr />
+      <h2>5.1</h2>
+     <hr />
+     <h4> Choose a color from the following: </h4> 
+     <form id = "myForm" action = "">
+         <p> 
+
+         <label> <input type = "radio" name = "colorButton" 
+                   value = "red" 
+                   onclick = "colorChoice('red')" />
+             Red </label>
+         <br /> 
+
+         <label> <input type = "radio" name = "colorButton"
+                   value = "blue" 
+                   onclick = "colorChoice('blue')" /> 
+             Blue </label>
+         <br /> 
+
+        <label> <input type = "radio" name = "colorButton" 
+                   value = "green" 
+                   onclick = "colorChoice('green')" />
+             Green </label>
+        <br /> 
+
+        <label> <input type = "radio" name = "colorButton"
+                   value = "yellow"
+                   onclick = "colorChoice('yellow')" /> 
+            Yellow </label> 
+        <br />
+
+        <label> <input type = "radio" name = "colorButton" 
+                   value = "orange" 
+                   onclick = "colorChoice('orange')" />
+            Orange </label>
+        </p>
+    </form>
+
+     <hr />
+      <h2>5.2</h2>
+     <hr /> 
+     <h4> Choose a color from the following: </h4> 
+     <form id = "myForm2" action = "">
+         <p> 
+
+         <label> <input type = "radio" name = "colorButton2" 
+                   value = "red" />
+             Red </label>
+         <br /> 
+
+         <label> <input type = "radio" name = "colorButton2"
+                   value = "blue" /> 
+             Blue </label>
+         <br /> 
+
+        <label> <input type = "radio" name = "colorButton2" 
+                   value = "green" />
+             Green </label>
+        <br /> 
+
+        <label> <input type = "radio" name = "colorButton2"
+                   value = "yellow" /> 
+            Yellow </label> 
+        <br />
+
+        <label> <input type = "radio" name = "colorButton2" 
+                   value = "orange" />
+            Orange </label>
+        </p>
+    </form> 
+<script> assignElements(); </script>
+  </body>
+</html>
