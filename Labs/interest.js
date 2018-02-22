@@ -16,7 +16,7 @@ var moneyFormatter = new Intl.NumberFormat('en-US',
 function validBalance(field) {
    var balance = event.currentTarget;
    if ( isNaN(parseInt(balance.value)) ) {
-      alert(rate.value + " is not a valid value");
+      alert("\""+balance.value + "\" is not a valid value");
       balance.focus();
       balance.value = "";
    } else {

@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html>
+
+   <head>
+      <title>Assignment Six</title>
+      <script type = "text/javascript" src = "six_totalCost.js"> </script>
+   </head>
+
+   <body>
+
+      <hr />
+      <h2>5.3</h2>
+      <hr />
+      <form onsubmit = "calcTotal();">
+        <input type = "checkbox" name = "apple" value = .59 onclick = "checkApple(this);">
+                Apple (59 cents each) <br />
+        <input type = "checkbox" name = "orange" value = .49 onclick = "checkOrange(this);">
+                Orange (49 cents each) <br />
+        <input type = "checkbox" name = "banana" value = .39 onclick = "checkBanana(this);">
+                Banana (39 cents each) <br />
+        <input type = "submit" name = "submit">
+      </form>
+
+      
+      <hr />
+      <h2>5.4</h2>
+      <hr />
+      <form onsubmit = "calcTotal2();">
+        <input type = "text" name = "apple" onchange = "valueApple(this.value);">
+                Number of Apples (59 cents each) <br />
+        <input type = "text" name = "orange" onchange = "valueOrange(this.value);">
+                Number of Oranges (49 cents each) <br />
+        <input type = "text" name = "banana" onchange = "valueBanana(this.value);">
+                Number of Bananas (39 cents each) <br />
+        <input type = "submit" name = "submit">
+      </form>
+
+      <hr />
+      <h2>5.5</h2>
+      <hr />
+      <form onsubmit = "calcTotal3();">
+        <input type = "text" name = "apple" onchange = "if (validateRange(this)) {validatedApple(this.value)};">
+                Number of Apples (59 cents each) <br />
+        <input type = "text" name = "orange" onchange = "if (validateRange(this)) {validatedOrange(this.value)};">
+                Number of Oranges (49 cents each) <br />
+        <input type = "text" name = "banana" onchange = "if (validateRange(this)) {validatedBanana(this.value)};">
+                Number of Bananas (39 cents each) <br />
+        <input type = "submit" name = "submit">
+      </form>
+
+      <hr />
+      <h2>5.6</h2>
+      <hr />
+      <form onsubmit = "calcTotal4();">
+        <input type = "text" name = "apple" min="0" max="99" onchange = "if (validateRange2(this)) {validatedApple2(this.value)};">
+                Number of Apples (59 cents each) <br />
+        <input type = "text" name = "orange" min="0" max="99" onchange = "if (validateRange2(this)) {validatedOrange2(this.value)};">
+                Number of Oranges (49 cents each) <br />
+        <input type = "text" name = "banana" min="0" max="99" onchange = "if (validateRange2(this)) {validatedBanana2(this.value)};">
+                Number of Bananas (39 cents each) <br />
+        <input type = "submit" name = "submit">
+      </form>
+
+   </body>
+</html>
