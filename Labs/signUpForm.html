@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<!--
+  kkaiser16@georgefox.edu,
+  kbrandao15@georgefox.edu
+  Lab 4 
+  2018-02-26
+-->
+<html>
+    <head>
+        <title>Sample Form</title>
+        <script type = "text/javascript" src = "form_validation.js"> </script>
+    </head>
+    <body>
+            <h2>Sample Form</h2>
+            <hr />
+            
+            <form id="signup_form" onSubmit="return validateForm();" action="http://dhansen.cs.georgefox.edu/~dhansen/echoForm.php" method="POST">
+
+                    <label for="email">Email address</label>
+                    <br />
+                    <input type="text" size="80" name="email" id="email" placeHolder="Email" onblur="validateEmail(this);" />
+                    </p>
+
+
+                    <p>
+                    <label for="password1">Password</label>
+                    <br />
+                    <input type="password" name="password1" id="password1" placeHolder="Password" onblur="validatePassword(this);" />
+                    <br />
+                    <input type="password" name="password2" id="password2" placeholder="Confirm password" onblur="validatePassword(this);" />
+                    </p>
+
+
+                    <p>
+                    <label for="course[]">Courses</label>
+                    <br />
+                    <input type="checkbox" name="course[]" id="csis201" value="csis201" /> CSIS 201
+                    <br />
+                    <input type="checkbox" name="course[]" id="csis304" value="csis304" /> CSIS 304
+                    <br />
+                    <input type="checkbox" name="course[]" id="csis310" value="csis310" /> CSIS 310
+                    
+                    </p>
+
+
+                    <p>
+                     <label for="standing">Standing</label>
+                    <br />
+                     <input type="radio" name="standing" id="freshman" value="freshman" checked="true"/> Freshman
+                    <br />
+                     <input type="radio" name="standing" id="sophomore" value="sophomore" /> Sophomore
+                    <br />
+                     <input type="radio" name="standing" id="junior" value="junior" /> Junior
+                    <br />
+                     <input type="radio" name="standing" id="senior" value="senior" /> Senior
+                <hr />
+                    </p>
+
+                <button type="submit">Submit</button>
+
+            </form>
+            <hr />
+            
+    </body>
+</html>
