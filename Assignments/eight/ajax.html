@@ -22,7 +22,7 @@
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
-           var element = "";  
+           var element;  
            // Loop through the temperature max and min
            for (var i = 0; i < 7; i++)
            {  
@@ -32,17 +32,13 @@
                  
                  if (element !== null)
                  {
-                   document.getElementById("temp"+j+""+i)).innerHTML = element.nodeValue;  
+                   document.getElementById("temp"+j+""+i).innerHTML = element.nodeValue;  
                  }  
                  else 
                  {
-                   document.getElementById("temp"+j+""+i)).innerHTML = "--";  
+                   document.getElementById("temp"+j+""+i).innerHTML = "--";  
                  }
               }
-              document.getElementById("max"+(i+1)).innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
-              document.getElementById("max"+(i+1)).innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
            }
            
            document.getElementById("xmlResponse").innerHTML =
