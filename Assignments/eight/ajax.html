@@ -22,13 +22,25 @@
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
-           
+           var element = "";  
            // Loop through the temperature max and min
            for (var i = 0; i < 7; i++)
-           {
-              document.getElementById("min"+(i+1)).innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[1].getElementsByTagName("value")[i].firstChild.nodeValue;
-
+           {  
+              for (var j = 0; j < 1; j++)
+              {
+                 element = xmlDoc.getElementsByTagName("temperature")[j].getElementsByTagName("value")[i].firstChild;  
+                 
+                 if (element !== null)
+                 {
+                   document.getElementById("temp"+j+""+i)).innerHTML = element.nodeValue;  
+                 }  
+                 else 
+                 {
+                   document.getElementById("temp"+j+""+i)).innerHTML = "--";  
+                 }
+              }
+              document.getElementById("max"+(i+1)).innerHTML =
+                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
               document.getElementById("max"+(i+1)).innerHTML =
                 xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
            }
@@ -91,21 +103,21 @@
          <td><img id="image6"> </img></td>
          <td><img id="image7"> </img></td>
       </tr><tr>
-         <td id="max1"> </td>
-         <td id="max2"> </td>
-         <td id="max3"> </td>
-         <td id="max4"> </td>
-         <td id="max5"> </td>
-         <td id="max6"> </td>
-         <td id="max7"> </td>
+         <td id="temp00"> </td>
+         <td id="temp01"> </td>
+         <td id="temp02"> </td>
+         <td id="temp03"> </td>
+         <td id="temp04"> </td>
+         <td id="temp05"> </td>
+         <td id="temp06"> </td>
      </tr><tr>
-         <td id="min1"> </td>
-         <td id="min2"> </td>
-         <td id="min3"> </td>
-         <td id="min4"> </td>
-         <td id="min5"> </td>
-         <td id="min6"> </td>
-         <td id="min7"> </td>
+         <td id="temp10"> </td>
+         <td id="temp11"> </td>
+         <td id="temp12"> </td>
+         <td id="temp13"> </td>
+         <td id="temp14"> </td>
+         <td id="temp15"> </td>
+         <td id="temp16"> </td>
      </tr>
    <div id="xmlResponse"></div>
 
