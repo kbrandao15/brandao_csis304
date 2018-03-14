@@ -24,19 +24,19 @@
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            var element;  
            // Loop through the temperature max and min
-           for (var i = 0; i < 7; i++)
+           for (var i = 0; i < 2; i++)
            {  
-              for (var j = 0; j < 1; j++)
+              for (var j = 0; j < 7; j++)
               {
-                 element = xmlDoc.getElementsByTagName("temperature")[j].getElementsByTagName("value")[i].firstChild;  
+                 element = xmlDoc.getElementsByTagName("temperature")[i].getElementsByTagName("value")[j].firstChild;  
                  
                  if (element !== null)
                  {
-                   document.getElementById("temp"+j+""+i).innerHTML = element.nodeValue;  
+                   document.getElementById("temp"+i+""+j).innerHTML = element.nodeValue;  
                  }  
                  else 
                  {
-                   document.getElementById("temp"+j+""+i).innerHTML = "--";  
+                   document.getElementById("temp"+i+""+j).innerHTML = "--";  
                  }
               }
            }
