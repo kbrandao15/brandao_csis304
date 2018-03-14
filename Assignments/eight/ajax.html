@@ -23,9 +23,12 @@
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            
-           // Loop through the temperature max
+           // Loop through the temperature max and min
            for (var i = 0; i < 7; i++)
            {
+              document.getElementById("min"+(i+1)).innerHTML =
+                xmlDoc.getElementsByTagName("temperature")[1].getElementsByTagName("value")[i].firstChild.nodeValue;
+
               document.getElementById("max"+(i+1)).innerHTML =
                 xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
            }
