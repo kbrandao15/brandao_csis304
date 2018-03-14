@@ -28,7 +28,7 @@
            // in the div I set aside. Obviously we'd want to do more
            // than this in general...
            document.getElementById("xmlResponse").innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[0].firstChild[0].nodeValue;
+                xmlDoc.getElementsByTagName("temperature")[0].childNodes[0].nodeValue;
            // NOTE: if the data we want is not in an attribute of the
            // tag, but rather embedded within the tag
            // (e.g., <name>Foo</name>) then we can access it with
