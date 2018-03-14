@@ -18,15 +18,18 @@
         // an area on the web page
         if (this.readyState==4 && this.status==200)
         {
-           // This is a trivial example that attempts to create a
-           // DOMParser and parse the response as XML and then grab
-           // some attributes from the document
+           // Creates a DOMParser and parses the response as XML and then grabs
+           // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            
-           // Grab some elements by name and display them on the page
-           // in the div I set aside. Obviously we'd want to do more
-           // than this in general...
+           // Loop through the temperature max
+           for (var i = 0; i < 7; i++)
+           {
+              document.getElementById("max"+(i+1)).innerHTML =
+                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[0].firstChild.nodeValue;
+           }
+           
            document.getElementById("xmlResponse").innerHTML =
                 xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("name")[0].firstChild.nodeValue;
            // NOTE: if the data we want is not in an attribute of the
@@ -73,6 +76,34 @@
 
    <body>
 
+   <h1>7-Day Weather Forecast</h1>
+
+   <table> 
+       <tr> 
+         <td><img id="image1"> </img></td>
+         <td><img id="image2"> </img></td>
+         <td><img id="image3"> </img></td>
+         <td><img id="image4"> </img></td>
+         <td><img id="image5"> </img></td>
+         <td><img id="image6"> </img></td>
+         <td><img id="image7"> </img></td>
+      </tr><tr>
+         <td id="max1"> </td>
+         <td id="max2"> </td>
+         <td id="max3"> </td>
+         <td id="max4"> </td>
+         <td id="max5"> </td>
+         <td id="max6"> </td>
+         <td id="max7"> </td>
+     </tr><tr>
+         <td id="min1"> </td>
+         <td id="min2"> </td>
+         <td id="min3"> </td>
+         <td id="min4"> </td>
+         <td id="min5"> </td>
+         <td id="min6"> </td>
+         <td id="min7"> </td>
+     </tr>
    <div id="xmlResponse"></div>
 
 
