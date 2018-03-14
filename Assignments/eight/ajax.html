@@ -27,7 +27,7 @@
            for (var i = 0; i < 7; i++)
            {
               document.getElementById("max"+(i+1)).innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[0].firstChild.nodeValue;
+                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("value")[i].firstChild.nodeValue;
            }
            
            document.getElementById("xmlResponse").innerHTML =
