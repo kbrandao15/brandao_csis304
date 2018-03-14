@@ -5,7 +5,7 @@
    <script type="text/javascript">
 
      // The URL we'll pull data from
-     var theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList=97132&format=24+hourly&numDays=7";
+     var theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList="+document.getElementById("zip")+"&format=24+hourly&numDays=7";
 
      /**
       * A simple callback function to display some results from an
@@ -88,7 +88,8 @@
    <body>
 
    <h1>7-Day Weather Forecast</h1>
-
+   
+   <label> ZipCode: <input type="text" name="zipcod" id="zip" placeholder="97132"/> </label>
    <table> 
        <tr> 
          <td><img id="image1"> </img></td>
@@ -114,6 +115,14 @@
          <td id="temp14"> </td>
          <td id="temp15"> </td>
          <td id="temp16"> </td>
+     </tr><tr>
+         <td id="warn0"> </td>
+         <td id="warn1"> </td>
+         <td id="warn2"> </td>
+         <td id="warn3"> </td>
+         <td id="warn4"> </td>
+         <td id="warn5"> </td>
+         <td id="warn6"> </td>
      </tr>
    <div id="xmlResponse"></div>
 
