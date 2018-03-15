@@ -51,7 +51,7 @@
 
                   if (i < 1) 
                   {
-                    img = xmlDoc.getElementsByTagName("conditions-icon")[0].getElementsByTagName("icon-link").firstChild;  
+                    img = xmlDoc.getElementsByTagName("conditions-icon")[0].getElementsByTagName("icon-link")[j].firstChild;  
                     if ((img!== undefined) && (img.nodeValue !== null)){ 
                         document.getElementById("image"+j).src = img.nodeValue;  
                     }
