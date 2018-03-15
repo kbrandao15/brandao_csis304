@@ -12,7 +12,8 @@ h1{
 
 .warnings {
    visibility: hidden;  
-   color: #F19F3D;  
+   color: red;
+   font-style: bold;  
 }
 
 table{
