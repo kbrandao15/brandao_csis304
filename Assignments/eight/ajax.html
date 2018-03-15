@@ -5,8 +5,7 @@
    <script type="text/javascript">
 
      // The URL we'll pull data from
-     var theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList="+(document.getElementById('zip').value)+"&format=24+hourly&numDays=7";
-
+     var theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList=97132&format=24+hourly&numDays=7";
      /**
       * A simple callback function to display some results from an
       * Ajax call. Note that 'this' in the context of the function will
@@ -81,6 +80,10 @@
                encodeURIComponent(url), true);
          xmlhttp.send();
      }
+     function setURL(zip)
+     {
+        theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList="+zip+"97132&format=24+hourly&numDays=7";
+     }
    </script>
 
    </head>
@@ -89,7 +92,7 @@
 
    <h1>7-Day Weather Forecast</h1>
    
-   <label> ZipCode: <input type="text" name="zipcod" id="zip" placeholder="97132" value="97132"/> </label>
+   <label> ZipCode: <input type="text" name="zipcod" placeholder="97132" onchange="setURL(this.value);"/> </label>
    <table> 
        <tr> 
          <td><img id="image1"> </img></td>
