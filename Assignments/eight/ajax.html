@@ -22,6 +22,8 @@
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            var element;  
+           var img;  
+           var 
            // Loop through the temperature max and min
            for (var i = 0; i < 2; i++)
            {  
@@ -40,13 +42,21 @@
                     {
                       document.getElementById("temp"+i+""+j).innerHTML = "-";  
                     }
-                 }
-                 else 
-                 {
-                   document.getElementById("zip").value=""; 
-                   document.getElementById("zip").placeholder="enter a valid zipcode";   
-                 }
-              }
+                  }
+                  else 
+                  {
+                    document.getElementById("zip").value=""; 
+                    document.getElementById("zip").placeholder="enter a valid zipcode";   
+                  }
+               
+
+                  if (i < 1) 
+                  {
+                    img = xmlDoc.getElementsByTagName("icon-link")[j];  
+                    if (img!== undefined && img.nodeValue !== null){ document.getElementById("image"+(j+1)).src = img.nodeNalue;  }
+                      
+                  }
+               }
              }
            // NOTE: if the data we want is not in an attribute of the
            // tag, but rather embedded within the tag
@@ -103,14 +113,15 @@
    <label> ZipCode: <input type="text" id="zip" name="zipcod" placeholder="97132" onchange="setURL(this.value);"/> </label>
    <table> 
        <tr> 
+         <td><img id="image0"> </img></td>
          <td><img id="image1"> </img></td>
          <td><img id="image2"> </img></td>
          <td><img id="image3"> </img></td>
          <td><img id="image4"> </img></td>
          <td><img id="image5"> </img></td>
          <td><img id="image6"> </img></td>
-         <td><img id="image7"> </img></td>
       </tr><tr>
+         <th>High: </th>
          <td id="temp00"> </td>
          <td id="temp01"> </td>
          <td id="temp02"> </td>
@@ -119,6 +130,7 @@
          <td id="temp05"> </td>
          <td id="temp06"> </td>
      </tr><tr>
+         <th>Low: </th>
          <td id="temp10"> </td>
          <td id="temp11"> </td>
          <td id="temp12"> </td>
@@ -127,6 +139,16 @@
          <td id="temp15"> </td>
          <td id="temp16"> </td>
      </tr><tr>
+         <th>Weather: </th>
+         <td id="wthr0"> </td>
+         <td id="wthr1"> </td>
+         <td id="wthr2"> </td>
+         <td id="wthr3"> </td>
+         <td id="wthr4"> </td>
+         <td id="wthr5"> </td>
+         <td id="wthr6"> </td>
+     </tr><tr>
+         <th class = "hidden">Warning</th>
          <td id="warn0"> </td>
          <td id="warn1"> </td>
          <td id="warn2"> </td>
