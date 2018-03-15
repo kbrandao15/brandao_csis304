@@ -52,7 +52,9 @@
                   if (i < 1) 
                   {
                     img = xmlDoc.getElementsByTagName("conditions-icon")[j].childNodes[j];  
-                    if ((img!== undefined) && (img.nodeValue !== null)){ document.getElementById("image"+j) = img.nodeValue;  }
+                    if ((img!== undefined) && (img.nodeValue !== null)){ 
+                        document.getElementById("image"+j).src = img.nodeValue;  
+                    }
                       
                   }
                }
