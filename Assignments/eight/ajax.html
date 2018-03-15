@@ -6,7 +6,8 @@
 
      // The URL we'll pull data from
      var theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList=97132&format=24+hourly&numDays=7";
-     /**
+     var zipcode = "97132";  
+      /**
       * A simple callback function to display some results from an
       * Ajax call. Note that 'this' in the context of the function will
       * be an XMLHttpRequest object at runtime
@@ -30,7 +31,7 @@
               {
                  if (xmlDoc.getElementsByTagName("temperature")[i] !== undefined)
                  {
-                    document.getElementById("zip").placeholder="97132";   
+                    document.getElementById("zip").placeholder=zipcode;   
                     element = xmlDoc.getElementsByTagName("temperature")[i].getElementsByTagName("value")[j].firstChild;  
                  
                     if (element !== null)
@@ -100,6 +101,7 @@
 
      function setURL(zip)
      {
+        zipcode = zip;  
         theURL = "https://graphical.weather.gov/xml/sample_products/browser_interface/ndfdBrowserClientByDay.php?zipCodeList="+zip+"&format=24+hourly&numDays=7";
         makeAsynchRequest(theURL, aSimpleCallback);
      }
