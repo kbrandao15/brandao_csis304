@@ -6,8 +6,13 @@ body {
    width: 100%;  
 }
 
-.hidden {
+h1{
+   color: #4484CE;  
+}
 
+.warnings {
+   visibility: hidden;  
+   color: #F19F3D;  
 }
 
 table{

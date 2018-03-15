@@ -44,11 +44,11 @@
                   while (warn.getElementsByTagName("hazard")[i] !== undefined)
                   {
                      alert("warning loop");  
-                     warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance");  
+                     warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance")+ " ";  
                      i++;  
                   }
                   document.getElementById("warning").innerHTML = warning;  
-
+                  document.getElementById("warnings").style.visibility = visible;  
               }
            }
 
@@ -151,8 +151,8 @@
 
    <h1>7-Day Weather Forecast</h1>
    
-   <div>
-      Warning: current 
+   <div class = "warnings" id= "warnings">
+      Warning: 
      <span id = "warning">  </span>
    </div>
     
