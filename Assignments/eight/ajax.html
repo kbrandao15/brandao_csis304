@@ -37,7 +37,7 @@
            warn = xmlDoc.getElementsByTagName("hazards")[0];  
            if (warn !== undefined && warn.getElementsByTagName("hazard-conditions")[0] !== null) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
            {
-              if (warn.getElementsByTagName("hazard")[0] !== undefined)
+              if (warn !== null && warn.getElementsByTagName("hazard")[0] !== undefined)
               {
                   var i = 0;  
                   while (warn.getElementsByTagName("hazard")[i] !== undefined)
