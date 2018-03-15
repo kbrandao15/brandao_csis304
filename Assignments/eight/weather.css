@@ -2,7 +2,7 @@ body {
    background-color: #d9d9d9;
    color: #0b3c5d;
    text-align: center;
-   font-style: sans-serif, sans-serif;
+   font-style: arial, sans-serif;
    width: 100%;  
 }
 
@@ -13,4 +13,5 @@ body {
 table{
    width: 100%;  
    padding: 2%;  
+   text-align: center;  
 }
