@@ -28,7 +28,25 @@
            var element;  
            var img;  
            var weather;  
-           var warn;            
+           var warn;        
+           var warning = " ";      
+           
+           // check for weather warnings:
+           warn = xmlDoc.getElementsByTagName("hazards")[0];  
+           if (warn !== undefined) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
+           {
+              if (warn.getElementsByTagName("hazards")[0] !== undefined)
+              {
+                  var i = 0;  
+                  while (warn.getElementsByTagName("hazards")[i] !== undefined && warn.getElementsByTagName("hazards")[i] !== null)
+                  {
+                     warning += warn.getElementsByTagName("hazards").getAttribute("phenomena") + " " + warn.getElementsByTagName("hazards").getAttribute("significance");  
+                     i++;  
+                  }
+                  document.getElementById("warning").innerHTML = warning;  
+
+              }
+           }
 
            // Loop through the temperature max and min
            for (var i = 0; i < 2; i++)
@@ -129,6 +147,12 @@
 
    <h1>7-Day Weather Forecast</h1>
    
+   <div>
+      Warning: current 
+     <span id = "warning">  </span>
+   </div>
+    
+   </ br>
    <label> ZipCode: <input type="text" id="zip" name="zipcod" placeholder="97132" onchange="setURL(this.value);"/> </label>
    <table> 
        <tr> 
@@ -167,17 +191,7 @@
          <td id="wthr4"> </td>
          <td id="wthr5"> </td>
          <td id="wthr6"> </td>
-     </tr><tr>
-         <th class = "hidden">Warning</th>
-         <td id="warn0"> </td>
-         <td id="warn1"> </td>
-         <td id="warn2"> </td>
-         <td id="warn3"> </td>
-         <td id="warn4"> </td>
-         <td id="warn5"> </td>
-         <td id="warn6"> </td>
      </tr>
-   <div id="xmlResponse"></div>
 
 
    <script type="text/javascript">
