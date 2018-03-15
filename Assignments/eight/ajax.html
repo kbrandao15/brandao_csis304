@@ -23,7 +23,7 @@
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            var element;  
            // Loop through the temperature max and min
-           for (var i = 0; i < 1; i++)
+           for (var i = 0; i < 2; i++)
            {  
               for (var j = 0; j < 7; j++)
               {
@@ -39,9 +39,6 @@
                  }
               }
            }
-           
-           document.getElementById("xmlResponse").innerHTML =
-                xmlDoc.getElementsByTagName("temperature")[0].getElementsByTagName("name")[0].firstChild.nodeValue;
            // NOTE: if the data we want is not in an attribute of the
            // tag, but rather embedded within the tag
            // (e.g., <name>Foo</name>) then we can access it with
