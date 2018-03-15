@@ -22,12 +22,18 @@
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
+           
+           // attributes/elements grabbed from the XML
+           var defined = true;  
            var element;  
            var img;  
+           var weather;  
+           var warn;            
+
            // Loop through the temperature max and min
            for (var i = 0; i < 2; i++)
            {  
-              for (var j = 0; j < 7; j++)
+              for (var j = 0; j < 7 && defined; j++)
               {
                  if (xmlDoc.getElementsByTagName("temperature")[i] !== undefined)
                  {
@@ -45,18 +51,28 @@
                   }
                   else 
                   {
+                    defined = false;  
                     document.getElementById("zip").value=""; 
                     document.getElementById("zip").placeholder="enter a valid zipcode";   
                   }
                
 
-                  if (i < 1) 
+                  if (i < 1 && defined) 
                   {
+
+                    // get icon
                     img = xmlDoc.getElementsByTagName("conditions-icon")[0].getElementsByTagName("icon-link")[j].firstChild;  
-                    if ((img!== undefined) && (img.nodeValue !== null)){ 
-                        document.getElementById("image"+j).src = img.nodeValue;  
+                    if ((img!== undefined) && (img.nodeValue !== null))
+                    { 
+                       document.getElementById("image"+j).src = img.nodeValue;  
                     }
-                      
+
+                    // get weather summary
+                    weather = xmlDoc.getElementsByTagName("weather")[0].getElementsByTagName("weather-conditions")[j];  
+                    if ((weather !== undefined) && (weather.getAttribute("weather-summary") !== null))
+                    {
+                       document.getElementById("wthr"+j).value = weather.getAttribute("weather-summary");  
+                    }
                   }
                }
              }
@@ -116,6 +132,7 @@
    <label> ZipCode: <input type="text" id="zip" name="zipcod" placeholder="97132" onchange="setURL(this.value);"/> </label>
    <table> 
        <tr> 
+         <th> </th>
          <td><img id="image0"> </img></td>
          <td><img id="image1"> </img></td>
          <td><img id="image2"> </img></td>
