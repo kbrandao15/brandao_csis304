@@ -32,23 +32,7 @@
            var warning = " ";   
            document.getElementById("warnings").style.visibility = "hidden";  
                  
-           
-           // check for weather warnings:
-           warn = xmlDoc.getElementsByTagName("hazards")[0];  
-           if (warn !== undefined && warn.getElementsByTagName("hazard-conditions")[0] !== null) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
-           {
-              if (warn !== null && warn.getElementsByTagName("hazard")[0] !== undefined)
-              {
-                  var i = 0;  
-                  while (warn.getElementsByTagName("hazard")[i] !== undefined)
-                  {
-                     warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance")+ " ";  
-                     i++;  
-                  }
-                  document.getElementById("warning").innerHTML = warning;  
-                  document.getElementById("warnings").style.visibility = "visible";  
-              }
-           }
+
 
            // Loop through the temperature max and min
            for (var i = 0; i < 2; i++)
@@ -96,6 +80,26 @@
                   }
                }
              }
+           
+           // check for weather warnings:
+           if (defined){
+
+           warn = xmlDoc.getElementsByTagName("hazards")[0];  
+           if (warn !== undefined && warn.getElementsByTagName("hazard-conditions")[0] !== null) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
+           {
+              if (warn !== null && warn.getElementsByTagName("hazard")[0] !== undefined)
+              {
+                  var i = 0;  
+                  while (warn.getElementsByTagName("hazard")[i] !== undefined)
+                  {
+                     warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance")+ " ";  
+                     i++;  
+                  }
+                  document.getElementById("warning").innerHTML = warning;  
+                  document.getElementById("warnings").style.visibility = "visible";  
+              }
+           }
+}
            // NOTE: if the data we want is not in an attribute of the
            // tag, but rather embedded within the tag
            // (e.g., <name>Foo</name>) then we can access it with
