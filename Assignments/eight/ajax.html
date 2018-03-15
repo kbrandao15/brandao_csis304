@@ -29,21 +29,19 @@
            var img;  
            var weather;  
            var warn;        
-           var warning = " ";      
+           var warning = " ";   
+           document.getElementById("warnings").style.visibility = "hidden";  
+                 
            
            // check for weather warnings:
            warn = xmlDoc.getElementsByTagName("hazards")[0];  
            if (warn !== undefined && warn.getElementsByTagName("hazard-conditions")[0] !== null) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
            {
-               alert("warning");  
-              
               if (warn.getElementsByTagName("hazard")[0] !== undefined)
               {
-                  alert("warning in");  
                   var i = 0;  
                   while (warn.getElementsByTagName("hazard")[i] !== undefined)
                   {
-                     alert("warning loop");  
                      warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance")+ " ";  
                      i++;  
                   }
