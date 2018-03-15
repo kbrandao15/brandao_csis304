@@ -27,18 +27,25 @@
            {  
               for (var j = 0; j < 7; j++)
               {
-                 element = xmlDoc.getElementsByTagName("temperature")[i].getElementsByTagName("value")[j].firstChild;  
-                 
-                 if (element !== null)
+                 if (xmlDoc.getElementsByTagName("temperature")[i] !== undefined)
                  {
-                   document.getElementById("temp"+i+""+j).innerHTML = element.nodeValue;  
-                 }  
+                    element = xmlDoc.getElementsByTagName("temperature")[i].getElementsByTagName("value")[j].firstChild;  
+                 
+                    if (element !== null)
+                    {
+                       document.getElementById("temp"+i+""+j).innerHTML = element.nodeValue;  
+                    }  
+                    else 
+                    {
+                      document.getElementById("temp"+i+""+j).innerHTML = "-";  
+                    }
+                 }
                  else 
                  {
-                   document.getElementById("temp"+i+""+j).innerHTML = "-";  
+                   document.getElementById("zip").placeholder="please enter a valid zipcode";  
                  }
               }
-           }
+             }
            // NOTE: if the data we want is not in an attribute of the
            // tag, but rather embedded within the tag
            // (e.g., <name>Foo</name>) then we can access it with
