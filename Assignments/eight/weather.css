@@ -2,7 +2,7 @@ body {
    background-color: #d9d9d9;
    color: #0b3c5d;
    text-align: center;
-   font-style: arial, sans-serif;
+   font: arial, sans-serif;
    width: 100%;  
 }
 
