@@ -44,7 +44,7 @@
                   while (warn.getElementsByTagName("hazard")[i] !== undefined)
                   {
                      alert("warning loop");  
-                     warning += warn.getElementsByTagName("hazard").getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard").getAttribute("significance");  
+                     warning += warn.getElementsByTagName("hazard")[i].getAttribute("phenomena") + " " + warn.getElementsByTagName("hazard")[i].getAttribute("significance");  
                      i++;  
                   }
                   document.getElementById("warning").innerHTML = warning;  
