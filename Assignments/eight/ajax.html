@@ -33,8 +33,9 @@
            
            // check for weather warnings:
            warn = xmlDoc.getElementsByTagName("hazards")[0];  
-           if (warn !== undefined) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
+           if (warn !== undefined && warn.getElementsByTagName("hazard-conditions")[0] !== null) { warn = warn.getElementsByTagName("hazard-conditions")[0]; }
            {
+               alert("warning");  
               
               if (warn.getElementsByTagName("hazards")[0] !== undefined)
               {
