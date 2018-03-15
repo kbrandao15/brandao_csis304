@@ -29,6 +29,7 @@
               {
                  if (xmlDoc.getElementsByTagName("temperature")[i] !== undefined)
                  {
+                    document.getElementById("zip").placeholder="97132";   
                     element = xmlDoc.getElementsByTagName("temperature")[i].getElementsByTagName("value")[j].firstChild;  
                  
                     if (element !== null)
@@ -42,7 +43,8 @@
                  }
                  else 
                  {
-                   document.getElementById("zip").placeholder="please enter a valid zipcode";  
+                   document.getElementById("zip").value=" "; 
+                   document.getElementById("zip").placeholder="enter a valid zipcode";   
                  }
               }
              }
