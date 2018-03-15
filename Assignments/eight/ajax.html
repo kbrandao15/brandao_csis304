@@ -71,7 +71,7 @@
                     weather = xmlDoc.getElementsByTagName("weather")[0].getElementsByTagName("weather-conditions")[j];  
                     if ((weather !== undefined) && (weather.getAttribute("weather-summary") !== null))
                     {
-                       document.getElementById("wthr"+j) = weather.getAttribute("weather-summary");  
+                       document.getElementById("wthr"+j).innerHTML = weather.getAttribute("weather-summary");  
                     }
                   }
                }
