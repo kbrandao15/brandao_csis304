@@ -3,7 +3,7 @@
 
   <?php
 
-  global $string = str_split($_POST["data"]);  
+  $string = str_split($_POST["data"]);  
   $fullLists = array(array());
   function getPermutations($aList)
   {
@@ -29,9 +29,10 @@
       echo "<br />";
       array_unshift($newList[$j], $char);
       echo "count of newList = ".count($newList[$j])."<br />";  
-      if (count($newList[$j]) == count($string))
+      if (count($newList[$j]) === sizeof($string))
       {
          array_push($fullLists, $newList[$j]);  
+         echo "entered the count if <br />";  
       }
      }
 
