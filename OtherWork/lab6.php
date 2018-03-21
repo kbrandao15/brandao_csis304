@@ -25,17 +25,10 @@
 
      for ($j = 0; $j < sizeof($newList); $j++)
      {
-      print_r($newList[$j]);
-      echo "<br />";  
-      print_r($newList);  
-      echo "<br />";
       array_unshift($newList[$j], $char);
-      echo "count of newList = ".count($newList[$j])."<br />";  
-      echo "count of originalString = ".sizeof($string)."<br />";  
       if (count($newList[$j]) == sizeof($string))
       {
          array_push($fullLists, $newList[$j]);  
-         echo "entered the count if <br />";  
       }
      }
 
@@ -47,11 +40,14 @@
   
   $listOfLists = getPermutations($string);
   print_r($fullLists);  
-  echo "<br /><br />";
+  $wordList;  
   foreach($fullLists as $word)
   {
-   echo implode($word);
-   echo "<br />";
+   array_push($wordList,(implode($word));
+  }
+  sort($wordList);  
+  foreach($wordList as $word){
+     echo $word." <br />";  
   }
  
  ?>
