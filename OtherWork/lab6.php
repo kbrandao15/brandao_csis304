@@ -40,14 +40,16 @@
   
   $listOfLists = getPermutations($string);
   print_r($fullLists);  
-  $wordList;  
+  $wordList = array();  
   foreach($fullLists as $word)
   {
    array_push($wordList,(implode($word)));
   }
   sort($wordList);  
+
   foreach($wordList as $word){
-     echo $word." <br />";  
+     echo $word;  
+     echo "<br />";  
   }
  
  ?>
