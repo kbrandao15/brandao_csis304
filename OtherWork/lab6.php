@@ -3,7 +3,7 @@
 
   <?php
 
-  $string = str_split($_POST["data"]);  
+  global $string = str_split($_POST["data"]);  
   $fullLists = array(array());
   function getPermutations($aList)
   {
