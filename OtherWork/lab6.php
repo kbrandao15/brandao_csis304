@@ -48,7 +48,7 @@
   $listOfLists = getPermutations($string);
   print_r($fullLists);  
   echo "<br /><br />";
-  foreach($listOfLists as $word)
+  foreach($fullLists as $word)
   {
    echo implode($word);
    echo "<br />";
