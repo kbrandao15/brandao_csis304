@@ -7,6 +7,7 @@
   $fullLists = array(array());
   function getPermutations($aList)
   {
+   global $fullLists;  
    global $string;  
    if (sizeof($aList) == 1)
    {
