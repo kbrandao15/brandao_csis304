@@ -27,6 +27,7 @@
       print_r($newList);  
       echo "<br />";
       array_unshift($newList[$j], $char);
+      echo sizeof($newList[$j]);  
       if (sizeof($newList[$j]) == sizeof($string))
       {
          array_push($fullLists, $newList[$j]);  
