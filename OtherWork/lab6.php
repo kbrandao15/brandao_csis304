@@ -16,6 +16,7 @@
      $copyList = $aList;
      $char = $copyList[$i];
      unset($copyList[$i]);
+     array_values($copyList[$i]);  
      $newList = getPermutations($copyList);
 
      for ($j = 0; $j < sizeof($newList); $j++)
