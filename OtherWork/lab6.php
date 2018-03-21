@@ -32,11 +32,7 @@
          array_push($fullLists, $newList[$j]);  
       }
      }
-     foreach($newList as $value)
-     {
-       print_r(array_values($value));
-       echo "<br />";
-     }
+
     }
      return $newList;
    }
