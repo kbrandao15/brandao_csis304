@@ -7,7 +7,7 @@
   {
    if (sizeof($aList) == 1)
    {
-    return array(array($aList));
+    return array($aList);
    }
    else
    {
