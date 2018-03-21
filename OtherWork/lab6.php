@@ -29,7 +29,7 @@
       array_unshift($newList[$j], $char);
       if (sizeOf($newList[$j] == sizeOf($string))
       {
-         fullLists.push($newList[$j]);  
+         array_push($fullLists, $newList[$j]);  
       }
      }
      foreach($newList as $value)
