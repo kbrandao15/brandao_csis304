@@ -39,7 +39,8 @@
 
   $string = str_split($_POST["data"]);
   $listOfLists = getPermutations($string);
-
+  print_r($listOfLists);  
+  echo "<br /><br />";
   foreach($listOfLists as $word)
   {
    echo implode($word);
