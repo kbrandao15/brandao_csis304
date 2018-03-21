@@ -21,7 +21,7 @@
      for ($j = 0; $j < sizeof($newList); $j++)
      {
       print_r($newList[$j]);
-      echo "<br />';  
+      echo "<br />";  
       print_r($newList);  
       echo "<br />";
       array_unshift($newList[$j], $char);
