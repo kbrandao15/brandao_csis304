@@ -29,7 +29,7 @@
       echo "<br />";
       array_unshift($newList[$j], $char);
       echo "count of newList = ".count($newList[$j])."<br />";  
-      if (count($newList[$j]) == sizeof($string))
+      if (count($newList[$j]) == count($string))
       {
          array_push($fullLists, $newList[$j]);  
       }
