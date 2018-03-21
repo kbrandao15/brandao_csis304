@@ -3,7 +3,7 @@
 
   <?php
 
-  function getPermutations($aList)
+  function getPermutations( 0 => $aList)
   {
    if (sizeof($aList) == 1)
    {
