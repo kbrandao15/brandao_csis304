@@ -2,7 +2,7 @@
  <body>
 
   <?php
-  
+  $string = str_split($_POST["data"]);  
   $fullLists = array(array());
   function getPermutations($aList)
   {
@@ -39,7 +39,7 @@
    }
   }
 
-  $string = str_split($_POST["data"]);
+  
   $listOfLists = getPermutations($string);
   print_r($listOfLists);  
   echo "<br /><br />";
