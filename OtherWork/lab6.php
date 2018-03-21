@@ -28,7 +28,7 @@
       print_r($newList);  
       echo "<br />";
       array_unshift($newList[$j], $char);
-      echo "count of newList = ".count($newList[$j])."<br />;  
+      echo "count of newList = ".count($newList[$j])."<br />";  
       if (count($newList[$j]) == sizeof($string))
       {
          array_push($fullLists, $newList[$j]);  
