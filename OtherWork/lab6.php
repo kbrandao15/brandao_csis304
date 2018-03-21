@@ -43,7 +43,7 @@
   $wordList;  
   foreach($fullLists as $word)
   {
-   array_push($wordList,(implode($word));
+   array_push($wordList,(implode($word)));
   }
   sort($wordList);  
   foreach($wordList as $word){
