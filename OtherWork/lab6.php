@@ -2,6 +2,7 @@
  <body>
 
   <?php
+
   $string = str_split($_POST["data"]);  
   $fullLists = array(array());
   function getPermutations($aList)
@@ -41,7 +42,7 @@
 
   
   $listOfLists = getPermutations($string);
-  print_r($listOfLists);  
+  print_r($fullLists);  
   echo "<br /><br />";
   foreach($listOfLists as $word)
   {
