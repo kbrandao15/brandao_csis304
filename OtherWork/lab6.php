@@ -3,11 +3,11 @@
 
   <?php
 
-  function getPermutations( 0 => $aList)
+  function getPermutations($aList)
   {
    if (sizeof($aList) == 1)
    {
-    return array($aList);
+    return array(0 => $aList);
    }
    else
    {
