@@ -2,7 +2,8 @@
  <body>
 
   <?php
-
+  
+  $fullLists;  
   function getPermutations($aList)
   {
    if (sizeof($aList) == 1)
@@ -26,6 +27,10 @@
       print_r($newList);  
       echo "<br />";
       array_unshift($newList[$j], $char);
+      if (sizeOf($newList[$j] == sizeOf($string))
+      {
+         fullLists.push($newList[$j]);  
+      }
      }
      foreach($newList as $value)
      {
@@ -44,11 +49,6 @@
   foreach($listOfLists as $word)
   {
    echo implode($word);
-   echo "<br />";
-  }
-  foreach($string as $word)
-  {
-   echo $word;
    echo "<br />";
   }
  
