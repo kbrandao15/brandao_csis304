@@ -57,7 +57,7 @@
   sort($wordList);  
   $wordList = array_unique($wordList);  
   unset($wordList[0]);  
-  $wordList = $array_values($wordList);  
+  $wordList = array_values($wordList);  
   foreach($wordList as $word)
   {
      echo $word;  
