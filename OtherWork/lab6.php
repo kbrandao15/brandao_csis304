@@ -49,6 +49,7 @@
    array_push($wordList,(implode($word)));
   }
   sort($wordList);  
+  array_unique($wordList);  
 
   foreach($wordList as $word){
      echo $word;  
@@ -57,7 +58,7 @@
  
  ?>
 
- <a href="lab6Main.html">Try Again</a>
+ <a href="fooForm.html">Try Again</a>
 
  </body>
 </html>
