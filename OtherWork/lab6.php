@@ -9,7 +9,6 @@
   {
    global $fullLists;  
    global $string;  
-   global $newList;  
    if (sizeof($aList) == 1)
    {
     return array(0 => $aList);
@@ -18,6 +17,7 @@
    {
     for ($i = 0; $i < sizeof($aList); $i++)
     {
+
      $copyList = $aList;
      $char = $copyList[$i];
      unset($copyList[$i]);
