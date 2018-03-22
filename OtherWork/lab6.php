@@ -66,7 +66,7 @@
  
  ?>
 
- <a href="fooForm.html">Try Again</a>
+ <a href="lab6Main.html">Try Again</a>
 
  </body>
 </html>
