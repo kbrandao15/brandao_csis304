@@ -41,13 +41,13 @@
   }
 
   
-  $listOfLists = getPermutations($string);
-  print_r($fullLists);  
+  getPermutations($string);
   $wordList = array();  
   foreach($fullLists as $word)
   {
    array_push($wordList,(implode($word)));
   }
+
   sort($wordList);  
   array_unique($wordList);  
 
