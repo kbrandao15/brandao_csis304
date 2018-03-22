@@ -16,7 +16,9 @@
      {
         array_push($fullLists, $aList);  
      }
-    return array(0 => $aList);
+     else{
+      return array(0 => $aList);
+     }
    }
    else
    {
