@@ -9,6 +9,7 @@
   {
    global $fullLists;  
    global $string;  
+   global $newList;  
    if (sizeof($aList) == 1)
    {
     return array(0 => $aList);
@@ -21,7 +22,7 @@
      $char = $copyList[$i];
      unset($copyList[$i]);
      $copyList = array_values($copyList);  
-     $newList = getPermutations($copyList);
+     array_push($newList, getPermutations($copyList));
 
      for ($j = 0; $j < sizeof($newList); $j++)
      {
@@ -31,9 +32,8 @@
          array_push($fullLists, $newList[$j]);  
       }
      }
-      return $newList;
     }
-
+    return $newList;  
    }
   }
 
