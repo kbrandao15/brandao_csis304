@@ -22,18 +22,20 @@
      $char = $copyList[$i];
      unset($copyList[$i]);
      $copyList = array_values($copyList);  
-     array_push($newList, getPermutations($copyList));
+     $newList = getPermutations($copyList);  
 
      for ($j = 0; $j < sizeof($newList); $j++)
      {
-      array_unshift($newList[$j], $char);
+      array_unshift($newList[$j], $char);  
+      
       if (count($newList[$j]) == sizeof($string))
       {
          array_push($fullLists, $newList[$j]);  
       }
      }
+      return $newList;  
     }
-    return $newList;  
+
    }
   }
 
