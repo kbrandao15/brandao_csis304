@@ -12,6 +12,10 @@
    $toReturn = array(array());  
    if (sizeof($aList) == 1)
    {
+     if (sizeof($string == 1)
+     {
+        array_push($fullLists, $aList);  
+     }
     return array(0 => $aList);
    }
    else
@@ -52,7 +56,7 @@
   $wordList = array_unique($wordList);  
 
   foreach($wordList as $word){
-     if (!is_null($word))
+     if (!empty($word))
      {
         echo $word;  
         echo "<br />";  
