@@ -12,7 +12,7 @@
    $toReturn = array(array());  
    if (sizeof($aList) == 1)
    {
-     if (sizeof($string == 1))
+     if (sizeof($string) == 1)
      {
         array_push($fullLists, $aList);  
      }
