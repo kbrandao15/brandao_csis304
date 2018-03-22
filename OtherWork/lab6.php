@@ -52,8 +52,11 @@
   $wordList = array_unique($wordList);  
 
   foreach($wordList as $word){
-     echo $word;  
-     echo "<br />";  
+     if (str_len($word) != 0)
+     {
+        echo $word;  
+        echo "<br />";  
+     }
   }
  
  ?>
