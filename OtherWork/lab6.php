@@ -49,7 +49,7 @@
   }
 
   sort($wordList);  
-  array_unique($wordList, SORT_STRING);  
+  array_unique($wordList);  
 
   foreach($wordList as $word){
      echo $word;  
