@@ -9,6 +9,7 @@
   {
    global $fullLists;  
    global $string;  
+   $toReturn = array(array());  
    if (sizeof($aList) == 1)
    {
     return array(0 => $aList);
@@ -17,7 +18,7 @@
    {
     for ($i = 0; $i < sizeof($aList); $i++)
     {
-
+     
      $copyList = $aList;
      $char = $copyList[$i];
      unset($copyList[$i]);
@@ -27,6 +28,7 @@
      for ($j = 0; $j < sizeof($newList); $j++)
      {
       array_unshift($newList[$j], $char);  
+      array_push($toReturn, $newList[$j]);  
       
       if (count($newList[$j]) == sizeof($string))
       {
@@ -34,7 +36,7 @@
       }
      }
     }
-      return $newList;  
+      return $toReturn;  
    }
   }
 
