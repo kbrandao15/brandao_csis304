@@ -58,7 +58,7 @@
   $wordList = array_unique($wordList);  
 
   foreach($wordList as $word){
-     if (!empty($word) && $word !== '0')
+     if (!empty($word) && $word !== "0")
      {
         echo $word;  
         echo "<br />";  
