@@ -33,9 +33,8 @@
          array_push($fullLists, $newList[$j]);  
       }
      }
-      return $newList;  
     }
-
+      return $newList;  
    }
   }
 
