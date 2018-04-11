@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>Welcome to DisneyLand</title>
+      <link rel="stylesheet" href="weather.css">
+      <script type="text/javascript">
+
+     // The URL we'll pull data from
+     var theURL = "https://disneyland.disney.go.com/media/flashComponents/maps/datafeeds/dlr/DLRMaps32.xml";
+      /**
+      * A simple callback function to display some results from an
+      * Ajax call. Note that 'this' in the context of the function will
+      * be an XMLHttpRequest object at runtime
+      */
+     function aSimpleCallback()
+     {
+        // If the request was successfull, put the response into
+        // an area on the web page
+        if (this.readyState==4 && this.status==200)
+        {
+           // Creates a DOMParser and parses the response as XML and then grabs
+           // some attributes (max/min temps, images, warnings) from the document
+           parser = new DOMParser();
+           xmlDoc=parser.parseFromString(this.responseText,"text/xml");
+           
+           // attributes/elements grabbed from the XML
+           var park1 = "disneyland";  
+           var park2 = "disneys-california-adventure";  
+           var filter = "attraction";  
+
+           var defined = true;  
+           var element;  
+           var img;  
+           var weather;  
+           var warn;        
+           var warning = " ";   	
+           document.getElementById("warnings").style.visibility = "hidden";  
