@@ -28,8 +28,9 @@
            
            entities = document.getElementsByTagName("entity");  
            for (var i = 0; i < entitites.length; i++){
+                   alert("entered loop!");  
                if (entities[i].getAttribute("map") !== 'undefined'){
-                   document.alert("found an entity:"+entities[i].getAttribute("map").nodeValue);  
+                   alert("found an entity:"+entities[i].getAttribute("map").nodeValue);  
                                   break;  
                }
 
