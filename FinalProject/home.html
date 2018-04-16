@@ -28,9 +28,15 @@
            var park2 = "disneys-california-adventure";  
            var filter = "attraction";  
            
+           // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
+           var parts = new Array();  
            for (var i = 0; i < entities.length; i++){ 
-               parts = entities[i].childNodes;  
+               entity = entities[i].childNodes;  
+               for (var j = 0; j < entity.length; j++){
+                  parts.push(entity[j].nodeName);  
+               }
+                     
                var x = Array.prototype.indexOf.call(parts, "map");  
                alert(x);  
                if (x >= 0){
