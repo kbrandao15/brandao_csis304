@@ -37,7 +37,7 @@
                   parts.push(entity[j].nodeName);  
                }
                      
-               var x = Array.prototype.indexOf.call(parts, "map");  
+               var x = parts.indexOf("map");  
                if (x >= 0){
                    alert("if2");  
                    alert("found an entity:" +entity[x].nodeValue);  
