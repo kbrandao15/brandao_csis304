@@ -22,6 +22,7 @@
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
+          document.getElementById("demo").innerHTML = this.responseText;  
            
            // attributes/elements grabbed from the XML
            var park1 = "disneyland";  
@@ -73,6 +74,6 @@
 
     </script>
   
- <body>Testing <script> makeAsynchRequest(theURL, setUpCallBack);  </script>
+ <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
  </body>
 </html>
