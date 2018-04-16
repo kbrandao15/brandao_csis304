@@ -34,7 +34,7 @@
                    alert("entered loop!");  
                parts = entities[i].childNodes;  
                alert(parts.length);  
-               var x = parts.indexOf("map");  
+               var x = Array.prototype.indexOf.call(parts, "map");  
                if (parts.indexOf("map") >= 0){
                    alert("found an entity:" +parts[x].nodeValue);  
                    //alert("found an entity:"+entities[i].firstChild.nodeValue); 
