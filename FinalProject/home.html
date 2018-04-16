@@ -11,7 +11,7 @@
       * Ajax call. Note that 'this' in the context of the function will
       * be an XMLHttpRequest object at runtime
       */
-     function aSimpleCallback()
+     function setUpCallback()
      {
         // If the request was successfull, put the response into
         // an area on the web page
@@ -26,11 +26,50 @@
            var park1 = "disneyland";  
            var park2 = "disneys-california-adventure";  
            var filter = "attraction";  
+           
+           entitities = document.getElementsByTagName("entity");  
+           for (var i = 0; i < entitites.length; i++){
+               if (entities[i].getAttribute("map") !== 'undefined'){
+                   document.alert("found an entity:"+entities[i].getAttribute("map").nodeValue);  
+                   
+               }
+               break;  
+           }
+       }
+     }
 
-           var defined = true;  
-           var element;  
-           var img;  
-           var weather;  
-           var warn;        
-           var warning = " ";   	
-           document.getElementById("warnings").style.visibility = "hidden";  
+      /**
+      * Generic function to make an asynchronous call to the given URL
+      * and call the given function to process the results
+      *
+      * param url to retrieve
+      * param callbackFunction to invoke when done retrieving
+      */
+     function makeAsynchRequest(url, callbackFunction)
+     {
+         // code for IE7+, Firefox, Chrome, Opera, Safari
+         if (window.XMLHttpRequest)
+         {
+            xmlhttp=new XMLHttpRequest();
+         }
+         else // code for IE6, IE5
+         {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+
+         // Create an anonymous function as the "callback" function
+         // to be executed when the request finishes
+         xmlhttp.onreadystatechange=callbackFunction;
+
+         // Get the request, encoding the URL to ensure that any
+         // parameters it includes do not confuse the proxy
+         xmlhttp.open("GET","proxy.php?mode=native&url="+
+               encodeURIComponent(url), true);
+         xmlhttp.send();
+     }
+
+    </script>
+  
+ <body>Testing
+ </body>
+</html>
