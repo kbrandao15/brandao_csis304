@@ -29,13 +29,12 @@
            var filter = "attraction";  
            
            entities = xmlDoc.getElementsByTagName("entity");  
-           alert(entities.length);  
-           for (var i = 0; i < entities.length; i++){
-                   alert("entered loop!");  
+           for (var i = 0; i < entities.length; i++){ 
                parts = entities[i].childNodes;  
                alert(parts.length);  
                var x = Array.prototype.indexOf.call(parts, "map");  
                if (x >= 0){
+                   alert("if2");  
                    alert("found an entity:" +parts[x].nodeValue);  
                    //alert("found an entity:"+entities[i].firstChild.nodeValue); 
  
