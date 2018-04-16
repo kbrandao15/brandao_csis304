@@ -30,8 +30,8 @@
            
            // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
-           var parts = new Array();  
            for (var i = 0; i < entities.length; i++){ 
+               var parts = new Array();  
                entity = entities[i].childNodes;  
                for (var j = 0; j < entity.length; j++){
                   parts.push(entity[j].nodeName);  
@@ -42,7 +42,7 @@
                if (x >= 0){
                    alert("if2");  
                    alert("found an entity:" +entity[i].nodeValue);  
-                   //alert("found an entity:"+entities[i].firstChild.nodeValue); 
+                   //alert("found an entity:"+entities[i].nodeValue); 
  
                                   
                }
