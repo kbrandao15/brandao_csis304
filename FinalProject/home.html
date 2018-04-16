@@ -35,12 +35,13 @@
                entity = entities[i].childNodes;  
                for (var j = 0; j < entity.length; j++){
                   parts.push(entity[j].nodeName);  
+                  alert(parts[j]);  
                }
                      
                var x = parts.indexOf("map");  
                if (x >= 0){
-                   alert("if2");  
-                   alert("found an entity:" +entity[x].nodeValue);  
+                   //alert("if2");  
+                   //alert("found an entity:" +entity[x].nodeValue);  
                    //alert("found an entity:"+entities[i].nodeValue); 
  
                                   
