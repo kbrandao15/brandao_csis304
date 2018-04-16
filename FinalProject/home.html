@@ -32,8 +32,12 @@
            alert(entities.length);  
            for (var i = 0; i < entities.length; i++){
                    alert("entered loop!");  
-               if (entities[i].getAttribute("map") !== 'undefined'){
-                   alert("found an entity:"+entities[i].getAttribute("map")[0].nodeValue);  
+               parts = entities[i].childNodes;  
+               var x = parts.indexOf("map");  
+               if (parts.indexOf("map") >= 0){
+                   alert("found an entity:" +parts[x].nodeValue);  
+                   //alert("found an entity:"+entities[i].firstChild.nodeValue); 
+ 
                                   
                }
 
