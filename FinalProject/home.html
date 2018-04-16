@@ -22,7 +22,6 @@
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
-          document.getElementById("demo").innerHTML = this.responseText;  
            
            // attributes/elements grabbed from the XML
            var park1 = "disneyland";  
@@ -34,7 +33,7 @@
            for (var i = 0; i < entities.length; i++){
                    alert("entered loop!");  
                if (entities[i].getAttribute("map") !== 'undefined'){
-                   alert("found an entity:"+entities[i].getAttribute("map").nodeValue);  
+                   alert("found an entity:"+entities[i].getAttribute("map")[0].nodeValue);  
                                   
                }
 
