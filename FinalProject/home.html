@@ -32,7 +32,7 @@
            entities = xmlDoc.getElementsByTagName("entity");  
            for (var i = 0; i < entities.length; i++){ 
                var parts = new Array();  
-               entity = entities[i].childNodes;  
+               entity = entities[i].children;  
                for (var j = 0; j < entity.length; j++){
                   parts.push(entity[j].nodeName);  
                   alert(parts[j]);  
@@ -41,7 +41,7 @@
                var x = parts.indexOf("map");  
                if (x >= 0){
                    //alert("if2");  
-                   //alert("found an entity:" +entity[x].nodeValue);  
+                   alert("found an entity:" +entity[x].nodeValue);  
                    //alert("found an entity:"+entities[i].nodeValue); 
  
                                   
