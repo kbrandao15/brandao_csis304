@@ -31,8 +31,8 @@
            entities = xmlDoc.getElementsByTagName("entity");  
            for (var i = 0; i < entities.length; i++){ 
                parts = entities[i].childNodes;  
-               alert(parts.length);  
                var x = Array.prototype.indexOf.call(parts, "map");  
+               alert(x);  
                if (x >= 0){
                    alert("if2");  
                    alert("found an entity:" +parts[x].nodeValue);  
