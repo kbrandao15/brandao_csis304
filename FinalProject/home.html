@@ -45,7 +45,7 @@
       * param url to retrieve
       * param callbackFunction to invoke when done retrieving
       */
-     function makeAsynchRequest(url, callbackFunction)
+     function makeAsynchRequest(url, setUpCallBack)
      {
          // code for IE7+, Firefox, Chrome, Opera, Safari
          if (window.XMLHttpRequest)
@@ -59,7 +59,7 @@
 
          // Create an anonymous function as the "callback" function
          // to be executed when the request finishes
-         xmlhttp.onreadystatechange=callbackFunction;
+         xmlhttp.onreadystatechange=setUpCallBack;
 
          // Get the request, encoding the URL to ensure that any
          // parameters it includes do not confuse the proxy
@@ -70,6 +70,6 @@
 
     </script>
   
- <body>Testing
+ <body>Testing <script> makeAsynchRequest(theURL, setUpCallBack);  </script>
  </body>
 </html>
