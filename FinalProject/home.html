@@ -29,6 +29,7 @@
            var filter = "attraction";  
            
            entities = xmlDoc.getElementsByTagName("ENTITY");  
+           alert(entities.length);  
            for (var i = 0; i < entities.length; i++){
                    alert("entered loop!");  
                if (entities[i].getAttribute("map") !== 'undefined'){
