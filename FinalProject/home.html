@@ -27,6 +27,8 @@
            var park1 = "disneyland";  
            var park2 = "disneys-california-adventure";  
            var filter = "attraction";  
+           var lands_d = new Array();  
+           var lands_ca = new Array();  
            
            // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
@@ -38,15 +40,22 @@
                   alert(parts[j]);  
                }
                      
-               var x = parts.indexOf("map");  
-               if (x >= 0){
-                   //alert("if2");  
-                   alert("x = "+x);  
-                   alert("found an entity:"+ (entity[x].childNodes[0].nodeValue));  
-                   //alert("found an entity:"+entities[i].nodeValue); 
+               var i_map = parts.indexOf("map");  
+               var i_land = parts.indexOf("land");  
+               var i_type = parts.indexOf("filter");  
+               var type = entity[i_type].childNodes[0].nodeValue;  
+               alert ("filter type = "+type);  
+
+               // determines if the entity is an attraction
+               
+               // determines if part of the disneyland or disneys-california-adventure map
+              // if (x >= 0){
+                   
+                  // alert("found an entity:"+ (entity[x].childNodes[0].nodeValue));  
+                   
  
                                   
-               }
+             //  }
 
            }
        }
