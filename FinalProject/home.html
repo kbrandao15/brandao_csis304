@@ -26,8 +26,10 @@
            var park1 = "disneyland";  
            var park2 = "disneys-california-adventure";  
            var filter = "attraction";  
-           var lands_d = [];  
-           var lands_ca = [];  
+          // var tomorrowland = []; var frontierland = []; var new-orleans-square = []; var main-street-usa = []; var mixkeys-toontown = []; 
+          // var critter-country = [];  var hollywood-pictures-backlot
+          // var lands_d = ["tomorrowland", "adventureland", "frontierland", "new-orleans-square", main-street-usa",fantasyland mickeys-toontown critter-country];  
+          // var lands_ca = ["hollywood-pictures-backlot", "paradise-pier", "sunshine-plaza", "golden-state", a-bugs-land];  
            
            // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
@@ -73,9 +75,10 @@
                        var i_caland = lands_ca.indexOf(land+"list");  
                       if (i_caland < 0)
                       {
-                        var land+"list" = [];  
-                        lands_ca.push(land+"list");  
+                        var newLand = [];  
+                        lands_ca.push(newLand);  
                         i_caland = lands_ca.length - 1;  
+                        lands_ca[i_caland].name = land;  
                       }
                       alert ("pushed land = "+lands_ca[0]);  
                       lands_ca[i_caland].push(attraction);  
