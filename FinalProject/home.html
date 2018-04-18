@@ -42,7 +42,7 @@
                var i_land = parts.indexOf("land");  
                var i_type = parts.indexOf("filters");  
                var i_attraction = parts.indexOf("label");  
-
+           if (i_map >=0 && i_land >=0 && i_type >= 0 && i_attraction >= 0){ 
                var map = entity[i_map].childNodes[0].nodeValue;  
                var land = entity[i_land].childNodes[0].nodeValue;  
                var type = entity[i_type].children[0].childNodes[0].nodeValue;  
@@ -79,7 +79,7 @@
                      
                   }
 
- 
+                }
 
                }
                
