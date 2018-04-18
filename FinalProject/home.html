@@ -60,23 +60,25 @@
                   // determines if part of the disneyland or disneys-california-adventure map,
                   // adding it to a land's list.  
                   if (map == park1){
-                    var i_dland = lands_d.indexOf(land);  
+                    var i_dland = lands_d.indexOf(land+"list");  
                     if (i_dland < 0)
                     {
-                       lands_d.push(land);  
+                       var land+"list" = [];    
+                       lands_d.push(land+"list");  
                        i_dland = lands_d.length - 1;  
                     }
-                    lands_d[i_dland].push(attraction+"[]");  
+                    lands_d[i_dland].push(attraction);  
 
                   } else if (map == park2){
-                       var i_caland = lands_ca.indexOf(land);  
+                       var i_caland = lands_ca.indexOf(land+"list");  
                       if (i_caland < 0)
                       {
-                        lands_ca.push(land);  
+                        var land+"list" = [];  
+                        lands_ca.push(land+"list");  
                         i_caland = lands_ca.length - 1;  
                       }
                       alert ("pushed land = "+lands_ca[0]);  
-                      lands_ca[i_caland].push(attraction+"[]");  
+                      lands_ca[i_caland].push(attraction);  
                      
                   }
 
