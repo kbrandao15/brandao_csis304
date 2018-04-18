@@ -26,13 +26,13 @@
            var park1 = "disneyland";  
            var park2 = "disneys-california-adventure";  
            var filter = "attraction";  
-           var lands_d = new Array();  
-           var lands_ca = new Array();  
+           var lands_d = [];  
+           var lands_ca = [];  
            
            // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
            for (var i = 0; i < entities.length; i++){ 
-               var parts = new Array();  
+               var parts = [];  
                entity = entities[i].children;  
                for (var j = 0; j < entity.length; j++){
                   parts.push(entity[j].nodeName);  
@@ -41,10 +41,47 @@
                var i_map = parts.indexOf("map");  
                var i_land = parts.indexOf("land");  
                var i_type = parts.indexOf("filters");  
-               var type = entity[i_type].children[0].childNodes[0].nodeValue;  
-               alert ("filter type = "+type);  
+               var i_attraction = parts.indexOf("label");  
 
+               var map = entity[i_map].childNodes[0].nodeValue;  
+               var land = entity[i_land].childNodes[0].nodeValue;  
+               var type = entity[i_type].children[0].childNodes[0].nodeValue;  
+               var attraction = entity[i_attraction].childNodes[0].nodeValue;  
+              alert("map = "+map);  
+              alert("land = "+land);  
+              alert("type = "+type);  
+              alert("attraction = "+attraction);  
+              
+                 
+            
                // determines if the entity is an attraction
+               if (type == "attraction"){
+
+                  // determines if part of the disneyland or disneys-california-adventure map,
+                  // adding it to a land's list.  
+                  if (map == park1){
+                    var i_dland = lands_d.indexOf(land);  
+                    if (i_dland < 0)
+                    {
+                       lands_d.push(land);  
+                       i_dland = lands_d.length - 1;  
+                    }
+                    lands_d[i_dland].push(attraction+"[]");  
+
+                  } else if (map == park2){
+                       var i_caland = lands_ca.indexOf(land);  
+                      if (i_caland < 0)
+                      {
+                        lands_d.push(land);  
+                        i_caland = lands_ca.length - 1;  
+                      }
+                      lands_ca[i_caland].push(attraction+"[]");  
+                     
+                  }
+
+ 
+
+               }
                
                // determines if part of the disneyland or disneys-california-adventure map
               // if (x >= 0){
