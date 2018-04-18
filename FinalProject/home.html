@@ -65,9 +65,10 @@
                     var i_dland = lands_d.indexOf(land+"list");  
                     if (i_dland < 0)
                     {
-                       var (land+"list") = [];    
-                       lands_d.push(land+"list");  
-                       i_dland = lands_d.length - 1;  
+                        var newLand = [];  
+                        lands_d.push(newLand);  
+                        i_dland = lands_d.length - 1;  
+                        lands_d[i_dland].name = land;  
                     }
                     lands_d[i_dland].push(attraction);  
 
