@@ -17,7 +17,6 @@
         // an area on the web page
         if (this.readyState==4 && this.status==200)
         {
-         alert("in if");  
            // Creates a DOMParser and parses the response as XML and then grabs
            // some attributes (max/min temps, images, warnings) from the document
            parser = new DOMParser();
@@ -37,12 +36,11 @@
                entity = entities[i].children;  
                for (var j = 0; j < entity.length; j++){
                   parts.push(entity[j].nodeName);  
-                  alert(parts[j]);  
-               }
+                }
                      
                var i_map = parts.indexOf("map");  
                var i_land = parts.indexOf("land");  
-               var i_type = parts.indexOf("filter");  
+               var i_type = parts.indexOf("filters");  
                var type = entity[i_type].childNodes[0].nodeValue;  
                alert ("filter type = "+type);  
 
