@@ -41,7 +41,7 @@
                var i_map = parts.indexOf("map");  
                var i_land = parts.indexOf("land");  
                var i_type = parts.indexOf("filters");  
-               var type = entity[i_type].childNodes[0].nodeValue;  
+               var type = entity[i_type].children[0].childNodes[0].nodeValue;  
                alert ("filter type = "+type);  
 
                // determines if the entity is an attraction
