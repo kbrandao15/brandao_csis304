@@ -13,6 +13,15 @@
        var filter = "attraction";  
        var lands_d = [];  
        var lands_ca = [];  
+
+
+       function search(nameKey, myArray){
+         for (var i=0; i < myArray.length; i++) {
+           if (myArray[i].name === nameKey) {
+              return i;
+           }
+         }
+       }
       /**
       * A simple callback function to display some results from an
       * Ajax call. Note that 'this' in the context of the function will
@@ -59,7 +68,7 @@
                   // determines if part of the disneyland or disneys-california-adventure map,
                   // adding it to a land's list.  
                   if (map == park1){
-                    var i_dland = lands_d.indexOf(land[]);  
+                    var i_dland = search(land, lands_d);  
                     if (i_dland < 0)
                     {
                         var newLand = [];  
@@ -70,7 +79,7 @@
                     lands_d[i_dland].push(attraction);  
 
                   } else if (map == park2){
-                       var i_caland = lands_ca.indexOf(land);  
+                       var i_caland = search(land, lands_ca);  
                       if (i_caland < 0)
                       {
                         var newLand = [];  
