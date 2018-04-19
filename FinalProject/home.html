@@ -5,6 +5,14 @@
 
      // The URL we'll pull data from
      var theURL = "https://disneyland.disney.go.com/media/flashComponents/maps/datafeeds/dlr/DLRMaps32.xml";
+
+
+     // attributes/elements grabbed from the XML
+       var park1 = "disneyland";  
+       var park2 = "disneys-california-adventure";  
+       var filter = "attraction";  
+       var lands_d = [];  
+       var lands_ca = [];  
       /**
       * A simple callback function to display some results from an
       * Ajax call. Note that 'this' in the context of the function will
@@ -22,16 +30,6 @@
            parser = new DOMParser();
            xmlDoc=parser.parseFromString(this.responseText,"text/xml");
            
-           // attributes/elements grabbed from the XML
-           var park1 = "disneyland";  
-           var park2 = "disneys-california-adventure";  
-           var filter = "attraction";  
-           var lands_d = [];  
-           var lands_ca = [];  
-          // var tomorrowland = []; var frontierland = []; var new-orleans-square = []; var main-street-usa = []; var mixkeys-toontown = []; 
-          // var critter-country = [];  var hollywood-pictures-backlot
-          // var lands_d = ["tomorrowland", "adventureland", "frontierland", "new-orleans-square", main-street-usa",fantasyland mickeys-toontown critter-country];  
-          // var lands_ca = ["hollywood-pictures-backlot", "paradise-pier", "sunshine-plaza", "golden-state", a-bugs-land];  
            
            // get the nodeList of entities in the xml, then go through all of them, searching for specific children
            entities = xmlDoc.getElementsByTagName("entity");  
@@ -46,16 +44,13 @@
                var i_land = parts.indexOf("land");  
                var i_type = parts.indexOf("filters");  
                var i_attraction = parts.indexOf("label");  
+
+           // attractions and lands get added to respective lists
            if (i_map >=0 && i_land >=0 && i_type >= 0 && i_attraction >= 0){ 
                var map = entity[i_map].childNodes[0].nodeValue;  
                var land = entity[i_land].childNodes[0].nodeValue;  
                var type = entity[i_type].children[0].childNodes[0].nodeValue;  
-               var attraction = entity[i_attraction].childNodes[0].nodeValue;  
-              alert("map = "+map);  
-              alert("land = "+land);  
-              alert("type = "+type);  
-              alert("attraction = "+attraction);  
-              
+               var attraction = entity[i_attraction].childNodes[0].nodeValue;                
                  
             
                // determines if the entity is an attraction
@@ -72,7 +67,6 @@
                         i_dland = lands_d.length - 1;  
                         lands_d[i_dland].name = land;  
                     }
-                    alert ("pushed land = "+lands_ca[0].name);  
                     lands_d[i_dland].push(attraction);  
 
                   } else if (map == park2){
@@ -84,26 +78,14 @@
                         i_caland = lands_ca.length - 1;  
                         lands_ca[i_caland].name = land;  
                       }
-                      alert ("pushed land = "+lands_ca[0].name);  
-                      lands_ca[i_caland].push(attraction);  
-                      alert ("pushed attraction = "+lands_ca[0][0]);  
-                     
+                     lands_ca[i_caland].push(attraction);                       
                   }
-
                 }
-
                }
-               
-               // determines if part of the disneyland or disneys-california-adventure map
-              // if (x >= 0){
-                   
-                  // alert("found an entity:"+ (entity[x].childNodes[0].nodeValue));  
-                   
- 
-                                  
-             //  }
+           } // end of loop
+            
+           // print the options
 
-           }
        }
      }
 
@@ -140,5 +122,14 @@
     </script>
   
  <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
+
+       </ br>
+       <div id="parkSelect">  </div>
+       </ br>
+       <div id ="landSelect"> </div>
+       </ br>
+       <div id ="attractionSelect"> </div>
+      
+      
  </body>
 </html>
