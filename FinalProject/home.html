@@ -18,9 +18,10 @@
        function search(nameKey, myArray){
          for (var i=0; i < myArray.length; i++) {
            if (myArray[i].name === nameKey) {
-              return i;
+              return i;  
            }
          }
+         return 0;  
        }
       /**
       * A simple callback function to display some results from an
