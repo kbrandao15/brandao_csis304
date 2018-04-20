@@ -271,6 +271,7 @@
            <option value="disneyland">Disneyland</option>
            <option value="disneys-california-adventure">Disney's California Adventure</option>
        </select>
+       <script> changeLands(getElementById("selectPark").value); changeAttraction(getElementById("selectLand").value)</script>
        <br />
 
        <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select>
