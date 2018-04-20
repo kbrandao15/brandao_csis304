@@ -2,11 +2,43 @@
 <html>
   <head>
     <script>
+      // This code (provided by Youtube API reference) loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // This function (provided by Youtube API reference) creates an <iframe> (and YouTube player)
+      // after the API code downloads.
+       var player;
+       function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+                                         height: '390',
+                                         width: '640',
+                                         videoId: '1-lkqAH5KW4',
+                                         events: {
+                                            'onReady': onPlayerReady,
+                                            'onStateChange': onPlayerStateChange
+                                         }
+                                  });
+        }
+
+      // The API will call this function (provided by Youtube API reference) when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
     </script>
     <title>Disneyland</title>
   </head>
   <body>
-    <iframe width="420" height="345" src="https://www.youtube.com/embed?listType=playlist&list=PL6E957D529E0843AE&autoplay=1&loop=1">
-    </iframe>
+    <div> </div>
+
+    </ br>
+    
+    <button type="button" onclick="player.cuePlaylist({listType:'search',
+                                                       list:'Disneyland main st. usa music'}):Void">Click Me!</button>
+
   </body>
 </html>
