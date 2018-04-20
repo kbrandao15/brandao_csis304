@@ -191,23 +191,8 @@
                }
            } // end of loop
             
-           // print the options
+           // fill drop-down select forms
            changeLands(document.getElementById("selectPark").value);  
-           for (var i = 0; i < lands_d.length; i++){
-             document.getElementById("landSelect").innerHTML = document.getElementById("landSelect").innerHTML + "<p>"+lands_d[i].name+"</p>"; 
-             for (var j = 0; j < lands_d[i].length; j++)
-             {
-                document.getElementById("landSelect").innerHTML = document.getElementById("landSelect").innerHTML +"<p style='text-indent:20%';>"+lands_d[i][j]+"</p>";  
-             } 
-           }
-           for (var i = 0; i < lands_ca.length; i++){
-             document.getElementById("landSelect").innerHTML = document.getElementById("landSelect").innerHTML + "<p>"+lands_ca[i].name+"</p>";  
-             for (var j = 0; j < lands_ca[i].length; j++)
-             {
-                document.getElementById("landSelect").innerHTML = document.getElementById("landSelect").innerHTML +"<p style='text-indent:20%';>"+lands_ca[i][j]+"</p>";  
-             } 
-           }
-
        }
      }
 
