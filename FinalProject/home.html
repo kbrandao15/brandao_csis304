@@ -40,7 +40,7 @@
           for(var i = 0; i < landList.length; i++)
           {
              var option = document.createElement("option");
-             option.text = "landList[i].name";
+             option.text = landList[i].name;
              lands.add(option);
           }
       }
@@ -74,7 +74,7 @@
           for(var i = 0; i < landList[index].length; i++)
           {
              var option = document.createElement("option");
-             option.text = "landList[index][i]";
+             option.text = landList[index][i];
              attractions.add(option);
           }
           
