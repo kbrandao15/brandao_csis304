@@ -207,17 +207,6 @@
      }
 
       /**
-      * Based on submit/ change, set the land and/or attraction selection lists
-      */
-      function setLandAndAttraction(element)
-      {
-        var option = document.createElement("option");
-        option.text = "Kiwi";
-        x.add(option);
-      }
-    
-
-      /**
       * Generic function to make an asynchronous call to the given URL
       * and call the given function to process the results
       *
@@ -251,8 +240,8 @@
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      //var firstScriptTag = document.getElementsByTagName('script')[0];
+      //firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       // This function (provided by Youtube API reference) creates an <iframe> (and YouTube player)
       // after the API code downloads.
@@ -264,7 +253,6 @@
                                          videoId: '1-lkqAH5KW4',
                                          events: {
                                             'onReady': onPlayerReady,
-                                            
                                          }
                                   });
         }
