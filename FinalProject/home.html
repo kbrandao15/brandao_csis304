@@ -267,16 +267,15 @@
   
  <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
 
-       <select name = "selectPark" id="selectPark" onchange="changeLands(this.value)" > 
+       <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); changeAttraction(getElementById("selectLand").value);" > 
            <option value="disneyland">Disneyland</option>
            <option value="disneys-california-adventure">Disney's California Adventure</option>
        </select>
-       <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
-      
        <br />
 
        <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select>
-
+       <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
+      
        <br />
 
        <select name = "selectAttraction" id="selectAttraction">     </select>
