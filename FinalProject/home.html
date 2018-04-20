@@ -20,11 +20,13 @@
       // empty a list
       function removeListOptions(emptyList)
       {
-          for(var i = emptyList.options.length - 1 ; i >= 0 ; i--)
-          {
-             emptyList.remove(i);
-          }  
-      }
+          if(emptyList.options !== null){
+           for(var i = emptyList.options.length - 1 ; i >= 0 ; i--)
+            {
+               emptyList.remove(i);
+            }  
+          }      
+}
 
       // update land list
       function changeLands(park)
