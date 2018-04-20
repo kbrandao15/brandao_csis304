@@ -2,6 +2,8 @@
 <html>
   <head>
     <script>
+      var park= "disneyland";  
+      var searchTerm = "adventureland";  
       // This code (provided by Youtube API reference) loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -38,7 +40,7 @@
     </ br>
     
     <button type="button" onclick="player.cuePlaylist({listType:'search',
-                                                       list:'Disneyland main st. usa music'})">Click Me!</button>
+                                                       list: park+' '+searchTerm+' music' })">Click Me!</button>
 
   </body>
 </html>
