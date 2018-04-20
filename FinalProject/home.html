@@ -14,6 +14,15 @@
        var lands_d = [];  
        var lands_ca = [];  
 
+      // empty a list
+      function removeListOptions(emptyList)
+      {
+          for(var i = emptyList.options.length - 1 ; i >= 0 ; i--)
+          {
+             emptyList.remove(i);
+          }  
+      }
+
       // update land list
       function changeLands(park)
       {
@@ -28,13 +37,10 @@
              landList = lands_ca;  
           }
 
-          var lands = document.getElementById("selectLand");
+          var lands = document.getElementById("selectLand");  
 
-          // empty current drop-down menu  
-          for(var i = lands.options.length - 1 ; i >= 0 ; i--)
-          {
-             lands.remove(i);
-          }  
+          removeListsOptions(lands);  
+          removeListOptions(document.getElementsById("selectAttraction");  
 
           // add new select drop-down menu
           for(var i = 0; i < landList.length; i++)
@@ -63,12 +69,8 @@
           
           var attractions = document.getElementById("selectAttraction");
 
-          // empty current drop-down menu  
-          for(var i = attractions.options.length - 1 ; i >= 0 ; i--)
-          {
-             attractions.remove(i);
-          }  
-
+          removeListOptions(attractions);   
+          
           // add new select drop-down menu
           var index = search(land, landList);  
           for(var i = 0; i < landList[index].length; i++)
