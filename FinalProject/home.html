@@ -6,6 +6,9 @@
      // The URL we'll pull data from
      var theURL = "https://disneyland.disney.go.com/media/flashComponents/maps/datafeeds/dlr/DLRMaps32.xml";
 
+    // to be used in searches:
+    var selectedPark = "";  
+    var searchTerm = "";  
 
      // attributes/elements grabbed from the XML
        var park1 = "disneyland";  
@@ -80,7 +83,28 @@
              attractions.add(option);
           }
           
+    
+    
+    
+      // selected values set
+      function setPark()
+      {
+         selectedPark = document.getElementById("selectPark").value;  
+         player.loadPlaylist({listType:'search', list: selectedPark+' '+searchTerm+' music' })
       }
+
+      // set Land
+      function setLand()
+      {
+         searchTerm = document.getElementById("selectLand").value;  
+      }
+
+      function setAttraction()
+      {
+         searchTerm += " "+document.getElementById("selectAttraction").value;  
+      }
+
+
        // find index of multidimensional array
        function search(nameKey, myArray){
          for (var i=0; i < myArray.length; i++) {
@@ -90,6 +114,8 @@
          }
          return -1;  
        }
+
+
       /**
       * A simple callback function to display some results from an
       * Ajax call. Note that 'this' in the context of the function will
@@ -220,6 +246,33 @@
                encodeURIComponent(url), true);
          xmlhttp.send();
      }
+    
+      // This code (provided by Youtube API reference) loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // This function (provided by Youtube API reference) creates an <iframe> (and YouTube player)
+      // after the API code downloads.
+       var player;
+       function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+                                         height: '390',
+                                         width: '640',
+                                         videoId: '1-lkqAH5KW4',
+                                         events: {
+                                            'onReady': onPlayerReady,
+                                            
+                                         }
+                                  });
+        }
+
+      // The API will call this function (provided by Youtube API reference) when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
 
     </script>
   
@@ -229,22 +282,29 @@
            <option value="disneyland">Disneyland</option>
            <option value="disneys-california-adventure">Disney's California Adventure</option>
        </select>
-
-
-       </ br>
+       <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
+      
+       <br />
 
        <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select>
 
-       </ br>
+       <br />
 
        <select name = "selectAttraction" id="selectAttraction">     </select>
-       
+       <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
+       <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Queue Music"> </input>
+      
 
-       </ br>
+       <br/>
+
+       <div id="player"> </div>
+
+       <br />  
+
        <div id="parkSelect">  </div>
-       </ br>
+       <br/>
        <div id ="landSelect"> </div>
-       </ br>
+       <br />
        <div id ="attractionSelect"> </div>
 
 
