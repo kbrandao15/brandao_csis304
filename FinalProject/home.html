@@ -14,7 +14,72 @@
        var lands_d = [];  
        var lands_ca = [];  
 
+      // update land list
+      function changeLands(park)
+      {
+          var landList = [];  
 
+          if (park == park1)
+          {
+             landList = lands_d;  
+          }
+          else if (park == park2)
+          {
+             landList = lands_ca;  
+          }
+
+          var lands = document.getElementById("selectLand");
+
+          // empty current drop-down menu  
+          for(var i = lands.options.length - 1 ; i >= 0 ; i--)
+          {
+             lands.remove(i);
+          }  
+
+          // add new select drop-down menu
+          for(var i = 0; i < landList.length; i++)
+          {
+             var option = document.createElement("option");
+             option.text = "landList[i].name";
+             lands.add(option);
+          }
+      }
+
+      // update attraction list
+      function changeAttraction(land)
+      {
+          // determine land list
+          var landList = [];  
+          var park = document.getElementById("selectPark").value;  
+
+          if (park == park1)
+          {
+             landList = lands_d;  
+          }
+          else if (park == park2)
+          {
+             landList = lands_ca;  
+          }
+          
+          var attractions = document.getElementById("selectAttraction");
+
+          // empty current drop-down menu  
+          for(var i = attractions.options.length - 1 ; i >= 0 ; i--)
+          {
+             attractions.remove(i);
+          }  
+
+          // add new select drop-down menu
+          var index = search(land, landList);  
+          for(var i = 0; i < landList[index].length; i++)
+          {
+             var option = document.createElement("option");
+             option.text = "landList[index][i]";
+             attractions.add(option);
+          }
+          
+      }
+       // find index of multidimensional array
        function search(nameKey, myArray){
          for (var i=0; i < myArray.length; i++) {
            if (myArray[i].name === nameKey) {
@@ -114,6 +179,17 @@
      }
 
       /**
+      * Based on submit/ change, set the land and/or attraction selection lists
+      */
+      function setLandAndAttraction(element)
+      {
+        var option = document.createElement("option");
+        option.text = "Kiwi";
+        x.add(option);
+      }
+    
+
+      /**
       * Generic function to make an asynchronous call to the given URL
       * and call the given function to process the results
       *
@@ -147,12 +223,29 @@
   
  <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
 
+       <input name = "selectPark" id="selectPark" type="select" onchange="changeLands(this.value);" > 
+           <option value="disneyland">Disneyland</option>
+           <option value="disneys-california-adventure>Disney's California Adventure</option>
+       </input>
+
+
+       </ br>
+
+       <input name = "selectLand" id="selectLand" type="select" onchange="changeAttraction(this.value);" >  </input>
+
+       </ br>
+
+       <input name = "selectAttraction" id="selectAttraction" type="select">     </input>
+       
+
        </ br>
        <div id="parkSelect">  </div>
        </ br>
        <div id ="landSelect"> </div>
        </ br>
        <div id ="attractionSelect"> </div>
+
+
       
       
  </body>
