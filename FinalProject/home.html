@@ -35,7 +35,6 @@
 
           if (park == park1)
           {
-             alert("park is disneyland");  
              landList = lands_d;  
           }
           else if (park == park2)
@@ -271,7 +270,7 @@
     </script>
   
  <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
-
+       <script> changeLands("disneyland");  </script>
        <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); changeAttraction(document.getElementById('selectLand').value);"> 
            <option value="disneyland">Disneyland</option>
            <option value="disneys-california-adventure">Disney's California Adventure</option>
@@ -279,7 +278,7 @@
  
        <br />
 
-       <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select>
+       <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select> 
        <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
       
        <br />
@@ -287,7 +286,7 @@
        <select name = "selectAttraction" id="selectAttraction">     </select>
        <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
        <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Queue Music"> </input>
-       <script> changeLands("disneyland"); //changeAttraction(document.getElementById('selectLand').value);  </script>
+      
 
        <br/>
 
