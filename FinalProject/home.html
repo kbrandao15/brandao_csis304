@@ -263,19 +263,25 @@
          <tr> <td colspan="2">
                   <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); 
                                                                         changeAttraction(document.getElementById('selectLand').value);" > 
+                    <div class="selectors">
                         <option value="disneyland">Disneyland</option>
                         <option value="disneys-california-adventure">Disney's California Adventure</option>
+
                   </select>
           </td> </tr> 
 
           <tr> <td>
-                  <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select> 
+                  <select name = "selectLand" onchange="changeAttraction(this.value);" > <div class="selectors" >  
+                      <div class="selectors" id="selectLand">    </div>
+                  </select> 
                </td> <td>
                   <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
           </td> </tr>
 
           <tr> <td>
-                  <select name = "selectAttraction" id="selectAttraction">     </select>
+                  <select name = "selectAttraction">     
+                      <div class="selectors" id="selectAttraction">    </div>
+                  </select>
                </td> <td>
                   <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
           </td> <tr>
