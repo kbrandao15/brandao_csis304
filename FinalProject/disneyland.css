@@ -111,7 +111,7 @@ select {
   padding: 5px;
 }
 
-.introduction{
+.frame{
     background-color: #eee8f7;  
     opacity: 0.1;
     filter: alpha(opacity=10); /* For IE8 and earlier */
