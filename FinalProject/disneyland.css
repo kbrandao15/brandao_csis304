@@ -60,11 +60,21 @@ button {
 select {
     text-align-last: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
     width: 100%;  
     font-size: 23px;  
+    
+    /* wrap text in compatible browsers */
+    -moz-white-space:pre-wrap; 
+    -o-white-space:pre-wrap; 
+    white-space:pre-wrap; 
+
+    /* hide text that can't wrap with an ellipsis */
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 
+.parkSelector
 .selectors {
      appearance: none;  
      padding: 20px;  
