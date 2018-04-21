@@ -16,21 +16,25 @@ table {
 }
 
 th, td {
-    text-align: left;  
+    padding: 8%;  
+    text-align: center;  
     border-bottom: 1px solid # ddd;  
+    width: 100%;
 }
 
 .col-Large{
-    width: 60%;
+    
 }
 
 .col-Small {
-    width: 40%;
+    
 }
 
 
 select {
     text-align-last: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .selectors {
