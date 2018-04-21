@@ -70,7 +70,6 @@ select {
     overflow:hidden; 
     white-space:pre; 
     text-overflow:ellipsis;
-    -webkit-appearance: none;
 }
 
 .parks {
