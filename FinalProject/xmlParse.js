@@ -104,7 +104,7 @@
       // set Land
       function setLand()
       {
-         searchTerm = document.getElementById("selectLand").text;  
+         searchTerm = document.getElementById("selectLand").value;  
       }
 
       function setAttraction()
