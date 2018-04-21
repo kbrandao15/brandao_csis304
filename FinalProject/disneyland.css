@@ -64,7 +64,6 @@ select {
     width: 100%;  
 
     font-size: 23px;  
-    appearance: none;  
     padding: 20px;  
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
@@ -80,7 +79,7 @@ select {
 }
 
 .lands {
-     background-color: #cc6d08;  
+     background-color: #e87a06;  
      color: #fff;
 }
 
