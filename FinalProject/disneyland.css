@@ -36,24 +36,24 @@ button {
 
 .button {
   display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
+  padding: 20px;
+  font-size: 23px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #47adc6;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px rgba(0,0,0,0.2);
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {background-color:  #4f9bad}
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  background-color: #4f9bad;
+  box-shadow: 0 5px rgba(0,0,0,0.2);
   transform: translateY(4px);
 }
 
@@ -66,6 +66,7 @@ select {
 
 .selectors {
      appearance: none;  
+     padding: 20px;  
      background-color: #f0ebf4;  
      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
