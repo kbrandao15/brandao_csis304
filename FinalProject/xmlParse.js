@@ -98,7 +98,6 @@
       function setPark()
       {
          selectedPark = document.getElementById("selectPark").value;  
-         alert("searched: "+selectedPark+" "+searchTerm);  
          player.loadPlaylist({listType:'search', list: selectedPark+' '+searchTerm+' music' });  
       }
 
