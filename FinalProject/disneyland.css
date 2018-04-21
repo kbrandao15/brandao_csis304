@@ -16,7 +16,7 @@ table {
 }
 
 th, td {
-    padding: 8%;  
+    padding: 8px;  
     text-align: center;  
     border-bottom: 1px solid # ddd;  
     width: 100%;
@@ -30,11 +30,15 @@ th, td {
     
 }
 
+button {
+    width: 100%;  
+}
 
 select {
     text-align-last: center;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%;  
 }
 
 .selectors {
