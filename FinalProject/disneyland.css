@@ -16,6 +16,15 @@ table {
     table-layout:fixed;  
 }
 
+footer {
+  position: fixed;
+  margin-top: 2%;
+  height: 50 width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  bottom: 0;
+}
+
 th, td {
     padding: 8px;  
     text-align: center;  
