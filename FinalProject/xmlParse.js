@@ -55,8 +55,8 @@
           for(var i = 0; i < landList.length; i++)
           {
              var option = document.createElement("option");
-             option.value = landList[i].name;
              option.text = formatLand(landList[i].name);  
+             option.value = landList[i].name;
              lands.add(option);
           }
       }
@@ -98,6 +98,7 @@
       function setPark()
       {
          selectedPark = document.getElementById("selectPark").value;  
+         alert("searched: "+selectedPark+" "+searchTerm);  
          player.loadPlaylist({listType:'search', list: selectedPark+' '+searchTerm+' music' });  
       }
 
