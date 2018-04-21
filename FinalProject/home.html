@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
    <head>
       <link rel="stylesheet" type="text/css" href="disneyland.css">
       <title>Welcome to DisneyLand</title>
@@ -19,18 +19,17 @@
           <p>Welcome to the music of Disneyland Resort!<sup><strong>1.</strong></sup>  We invite you to be our guest, 
              turn up your volume, and travel with us through song to a whole new world.<sup><strong>2.</strong></sup></p>
           <blockquote> 
-             "To all who come to this happy place; welcome. Disneyland is your land. Here age relives fond memories 
-             of the past…and here youth may savor the challenge and promise of the future. Disneyland is dedicated 
+             "To all who come to this happy place; welcome.  Disneyland is your land.  Here age relives fond memories 
+             of the past… and here youth may savor the challenge and promise of the future.  Disneyland is dedicated 
              to the ideals, the dreams and the hard facts that have created America… with the hope that it will be 
-             a source of joy and inspiration to all the world."  <br/> <cite>Walt Disney</cite>
+             a source of joy and inspiration to all the world."  <br /> <cite>Walt Disney</cite>
           </blockquote> 
       </div>
       <br />
-      <table name = "parkSelectors">
+      <table>
          <tr> <td colspan="2">
                   <select class="parks" name = "selectPark" id="selectPark" onchange="changeLands(this.value); 
                                                                         changeAttraction(document.getElementById('selectLand').value);" > 
-                    <div class="selectors">
                         <option value="disneyland">Disneyland</option>
                         <option value="disneys-california-adventure">Disney's California Adventure</option>
 
@@ -38,17 +37,17 @@
           </td> </tr> 
 
           <tr> <td>                      
-                  <select class = "lands" name = "selectLand" onchange="changeAttraction(this.value);" id="selectLand"> <div class="selectors" >  
+                  <select class = "lands" name = "selectLand" onchange="changeAttraction(this.value);" id="selectLand">   
                   </select>
                </td> <td>
-                  <input class="button" id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
+                  <input class="button" id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music" /> 
           </td> </tr>
 
           <tr> <td>  
                   <select class = "attractions" name = "selectAttraction" id="selectAttraction">     
                   </select>       
                </td> <td>
-                  <input class="button" id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
+                  <input class="button" id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music" /> 
           </td> </tr>
        </table>
 
@@ -62,7 +61,7 @@
         <p><strong>Disclaimer:</strong> I am not the owner of any media content.  To view the original YouTube posting, please click on the video's title.</p>
         <p><strong>1. </strong> The Disney Resort lands and attractions listed are based on data from pre-2011.  To see the current listings, 
                               please visit the official <a href="https://disneyland.disney.go.com/attractions/#/disneyland,disney-california-adventure/">
-                               Disney website </a>.</p>
+                               Disney website</a>.</p>
         <p><strong>2.  </strong>This application utilizes the YouTube API to search for music from the selected Disneyland Resort Park, 
                                 Land, and Attraction.  Because the search is dependent upon YouTube content, sometimes a "walkthrough" of an attraction
                                 or an unrelated video will play.  Please skip to the next video in the playlist to find more appropriate content
