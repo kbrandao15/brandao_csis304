@@ -20,7 +20,12 @@ th, td {
     border-bottom: 1px solid # ddd;  
 }
 
+select {
+    text-align-last: center;
+}
+
 .selectors {
+     appearance: none;  
      background-color: #f0ebf4;  
      display: none;
      position: absolute;
