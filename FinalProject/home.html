@@ -239,8 +239,8 @@
        var player;
        function onYouTubeIframeAPIReady() {
           player = new YT.Player('player', {
-                                         height: '390',
-                                         width: '640',
+                                         height: '270',
+                                         width: '480',
                                          videoId: '1-lkqAH5KW4',
                                          events: {
                                             'onReady': onPlayerReady,
@@ -255,23 +255,30 @@
 
     </script>
   
- <body>Testing <div id = "demo"></div><script> makeAsynchRequest(theURL, setUpCallBack);  </script>
-       <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); changeAttraction(document.getElementById('selectLand').value);"> 
-           <option value="disneyland">Disneyland</option>
-           <option value="disneys-california-adventure">Disney's California Adventure</option>
-       </select>
- 
-       <br />
+ <body>
+       <script> makeAsynchRequest(theURL, setUpCallBack);  </script>
 
-       <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select> 
-       <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
-      
-       <br />
+      <h1> Testing </h1>
+      <table name = "parkSelectors">
+         <tr> <td colspan="2">
+                  <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); 
+                                                                        changeAttraction(document.getElementById('selectLand').value);" > 
+                        <option value="disneyland">Disneyland</option>
+                        <option value="disneys-california-adventure">Disney's California Adventure</option>
+                  </select>
+          </td> </tr> 
 
-       <select name = "selectAttraction" id="selectAttraction">     </select>
-       <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
-       <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Queue Music"> </input>
-      
+          <tr> <td>
+                  <select name = "selectLand" id="selectLand" onchange="changeAttraction(this.value);" >  </select> 
+               </td> <td>
+                  <input id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
+          </td> </tr>
+
+          <tr> <td>
+                  <select name = "selectAttraction" id="selectAttraction">     </select>
+               </td> <td>
+                  <input id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
+          </td> <tr>
 
        <br/>
 
