@@ -22,7 +22,15 @@
                emptyList.remove(i);
             }  
           }      
-}
+     }
+ 
+
+      function formatLand(land)
+      {
+          land = land.replace(/-/g, ' ');
+          land.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+          return land;
+      }
 
       // update land list
       function changeLands(park)
@@ -48,7 +56,8 @@
           for(var i = 0; i < landList.length; i++)
           {
              var option = document.createElement("option");
-             option.text = landList[i].name;
+             option.value = landList[i].name;
+             option.text = formatLand(landList[i].name);  
              lands.add(option);
           }
       }
