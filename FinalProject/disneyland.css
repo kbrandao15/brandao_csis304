@@ -7,7 +7,8 @@ body {
     
     font-family: verdana;
     font-size: 20px;
-    margin: 10%;  
+    margin: 15%;  
+    text-align: center;  
 }
 
 * {
@@ -108,6 +109,12 @@ select {
   float: left;
   width: 50%;
   padding: 5px;
+}
+
+.introduction{
+    background-color: #eee8f7;  
+    opacity: 0.1;
+    filter: alpha(opacity=10); /* For IE8 and earlier */
 }
 
 /* Clear floats after image containers */
