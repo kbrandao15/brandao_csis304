@@ -18,7 +18,17 @@ th, td {
     padding: 8px;
     text-align: left;  
     border-bottom: 1px solid # ddd;  
+    position: absolute;  
 }
+
+.col-75 {
+    width: 75%;
+}
+
+.col-25 {
+    width: 25%;
+}
+
 
 select {
     text-align-last: center;
