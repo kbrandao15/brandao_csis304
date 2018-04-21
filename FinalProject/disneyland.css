@@ -7,6 +7,7 @@ body {
     
     font-family: verdana;
     font-size: 20px;
+    align: center;  
 }
 
 table {
@@ -59,7 +60,6 @@ button {
 
 select {
     text-align-last: center;
-    border: 1px solid #ccc;
     border-radius: 15px;
     width: 100%;  
 
