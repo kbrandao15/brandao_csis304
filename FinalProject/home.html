@@ -261,7 +261,7 @@
       <h1> Testing </h1>
       <table name = "parkSelectors">
          <tr> <td colspan="2">
-                  <select name = "selectPark" id="selectPark" onchange="changeLands(this.value); 
+                  <select class="parks" name = "selectPark" id="selectPark" onchange="changeLands(this.value); 
                                                                         changeAttraction(document.getElementById('selectLand').value);" > 
                     <div class="selectors">
                         <option value="disneyland">Disneyland</option>
@@ -271,14 +271,14 @@
           </td> </tr> 
 
           <tr> <td>                      
-                  <select class = "selectors" name = "selectLand" onchange="changeAttraction(this.value);" id="selectLand"> <div class="selectors" >  
+                  <select class = "lands" name = "selectLand" onchange="changeAttraction(this.value);" id="selectLand"> <div class="selectors" >  
                   </select>
                </td> <td>
                   <input class="button" id="landSelected" type="button" onclick="setLand(); setPark(); " value="Play Land Music"> </input>
           </td> </tr>
 
           <tr> <td>  
-                  <select class = "selectors" name = "selectAttraction" id="selectAttraction">     
+                  <select class = "attractions" name = "selectAttraction" id="selectAttraction">     
                   </select>       
                </td> <td>
                   <input class="button" id="attractionSelected" type="button" onclick="setLand(); setAttraction(); setPark(); " value="Play Attraction Music"> </input>
