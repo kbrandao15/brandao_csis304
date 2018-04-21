@@ -28,8 +28,7 @@
       function formatLand(land)
       {
           land = land.replace(/-/g, ' ');
-          land.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-          return land;
+          return land.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
       }
 
       // update land list
