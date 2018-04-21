@@ -62,21 +62,29 @@ select {
     border: 1px solid #ccc;
     border-radius: 15px;
     width: 100%;  
-    font-size: 23px;  
-    
-    /* wrap text in compatible browsers */
-    -moz-white-space:pre-wrap; 
-    -o-white-space:pre-wrap; 
-    white-space:pre-wrap; 
 
-    /* hide text that can't wrap with an ellipsis */
-    overflow: hidden;
+    font-size: 23px;  
+    appearance: none;  
+    padding: 20px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    overflow:hidden; 
+    white-space:pre; 
     text-overflow:ellipsis;
+    -webkit-appearance: none;
 }
 
-.selectors {
-     appearance: none;  
-     padding: 20px;  
-     background-color: #f0ebf4;  
-     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+.parks {
+     background-color: #906daf;  
+     color: #fff;
+}
+
+.lands {
+     background-color: #cc6d08;  
+     color: #fff;
+}
+
+.attractions {
+     background-color: #71bca3;  
+     color: #fff;
 }
