@@ -16,17 +16,16 @@ table {
 }
 
 th, td {
-    padding: 8px;
     text-align: left;  
     border-bottom: 1px solid # ddd;  
 }
 
-.col-75 {
-    width: 75%;
+.col-Large{
+    width: 60%;
 }
 
-.col-25 {
-    width: 25%;
+.col-Small {
+    width: 40%;
 }
 
 
