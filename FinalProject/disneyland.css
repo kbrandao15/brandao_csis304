@@ -114,6 +114,7 @@ select {
 .frame{
     background-color: rgba(238, 232, 247, 0.5);  
     filter: alpha(opacity=10); /* For IE8 and earlier */
+    padding: 14px 7px;  
 }
 
 /* Clear floats after image containers */
